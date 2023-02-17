@@ -32,7 +32,7 @@
 
 \begin{document}
 
-\title{RB5: A Real-Time Low-Cost Wheeled Robot for Autonomous Large-Scale Exploration}%, 3D~Reconstruction, and Mapping}
+\title{RB5: A Low-Cost Wheeled Robot for Real-Time Autonomous Large-Scale Exploration}%, 3D~Reconstruction, and Mapping}
 
 \author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$, Hector Castillo${}^\text{1}$, Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
         % <-this % stops a space
@@ -71,7 +71,9 @@ Article submission, IEEE, IEEEtran, journal, \LaTeX, paper, template, typesettin
 %IEEEtran.cls version 1.8b and later. The most common elements are covered in the simplified and updated instructions in ``New\_IEEEtran\_how-to.pdf''. For less common elements you can refer back to the original ``IEEEtran\_HOWTO.pdf''. It is assumed that the reader has a basic working knowledge of \LaTeX. Those who are new to \LaTeX \ are encouraged to read Tobias Oetiker's ``The Not So Short Introduction to \LaTeX ,'' available at: \url{http://tug.ctan.org/info/lshort/english/lshort.pdf} which provides an overview of working with \LaTeX.
 
 \section{Introduction}
-\IEEEPARstart{M}{obile} robots are incresingly used in use cases involving both indoors and outdoors autonomous exploration. In such use case, the robot is required to identify all its surroundings including obstacles and point of interest by sensing the environment~\cite{mei2006energy}, with little to none human interaction. 
+\IEEEPARstart{W}{idely} used in cluttered environments~\cite{kohlbrecher2014hector,kulkarni2022autonomous,tranzatto2022cerberus,kim2022autonomous}, mobile robots can both substitute~\cite{rubio2019review} and outperform humans in, e.g., areas that are too far or too dangerous to navigate~\cite{takahiro2022legged}. 
+In these areas, robots are often required to identify their surroundings by sensing the environment~\cite{mei2006energy} and planning and executing complex trajectories~\cite{shrestha2019learned} with little or no human interaction~\cite{alatise2020review}--a problem known as autonomous exploration~\cite{shrestha2019learned}. Despite recent advancements, autonomy is limited and costly. Many approaches that tackle autonomous exploration integrate commercial robots with sensing equipment that is both prohibitively expensive and difficult to maintain~\cite{lluvia2021active,placed2022survey}. Furthermore, in areas that are ambiguous or challenging to traverse--albeit autonomous--state-of-the-art approaches rely on humans for supervision and high-level decision-making~\cite{tranzatto2022cerberus}. As a result, robots often have to operate close to humans or require expensive network equipment.
+
 
 
 
