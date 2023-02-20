@@ -72,26 +72,51 @@ Article submission, IEEE, IEEEtran, journal, \LaTeX, paper, template, typesettin
 
 \section{Introduction}
 
-\IEEEPARstart{W}{idely} used in cluttered environments~\cite{kohlbrecher2014hector,kulkarni2022autonomous,tranzatto2022cerberus,kim2022autonomous}, mobile robots can both substitute~\cite{rubio2019review} and outperform humans in, e.g., areas that are too far or too dangerous to navigate~\cite{takahiro2022legged,roucek2020darpa}. In these areas, robots are often required to identify their surroundings by sensing the environment~\cite{mei2006energy} and planning and executing complex trajectories~\cite{shrestha2019learned,eldemiry2022autonomous} with little or no human intervention~\cite{alatise2020review}, a problem known as autonomous exploration~\cite{shrestha2019learned}. Despite recent advancements, autonomy is limited and costly. There is a wide range of methodologies for autonomous exploration at present~\cite{placed2022survey} nonetheless, which span from algorithmic foundations~\cite{yamauchi1997frontier,placed2022survey} to system-of-systems frameworks where, e.g., a multitude of robots integrate existing algorithms with sensors for large-scale exploration~\cite{tranzatto2022cerberus,roucek2020darpa}. While successful in challenging indoor and outdoor environments, many approaches that tackle autonomous exploration integrate commercial robots with sensing equipment that is both prohibitively expensive and difficult to maintain~\cite{lluvia2021active,placed2022survey,muller2021openbot}. Recent efforts include low-cost robots for exploration~\cite{muller2021openbot, zhou2021smartphone,faisal2021low} but lack terrain adaptability~\cite{muller2021openbot} and computational capabilities~\cite{zhou2021smartphone,faisal2021low}.
+\IEEEPARstart{W}{idely} used in cluttered environments~\cite{kohlbrecher2014hector,kulkarni2022autonomous,tranzatto2022cerberus,kim2022autonomous}, mobile robots can both substitute~\cite{rubio2019review} and outperform humans in, e.g., areas that are too far or too dangerous to navigate~\cite{takahiro2022legged,roucek2020darpa,tabib2022autonomous,ebadi2020lamp}. In these areas, robots are often required to identify their surroundings by sensing the environment~\cite{mei2006energy} and planning and executing complex trajectories~\cite{shrestha2019learned,eldemiry2022autonomous} with little or no human intervention~\cite{alatise2020review}, a problem known as autonomous exploration~\cite{shrestha2019learned}. 
+Despite recent advancements, autonomy is limited and costly. There is a wide range of methodologies for autonomous exploration at present~\cite{placed2022survey} nonetheless, which span from algorithmic foundations~\cite{yamauchi1997frontier,placed2022survey,dang2019graph} to system-of-systems frameworks where, e.g., a multitude of robots integrate existing algorithms with sensors for large-scale exploration~\cite{tranzatto2022cerberus,roucek2020darpa,tardioli2019ground,tabib2022autonomous,ebadi2020lamp}. 
+While successful in challenging indoor and outdoor environments~\cite{lluvia2021active,placed2022survey}, 
+autonomous exploration is especially useful in dynamic environments with no priori knowledge of the space to be covered~\cite{bircher2016receding,rubio2019review}.
+Here, many approaches that tackle %autonomous exploration 
+the problem integrate commercial robots with sensing equipment that is both prohibitively expensive and difficult to maintain~\cite{lluvia2021active,placed2022survey,muller2021openbot,tabib2022autonomous,tardioli2019ground,ebadi2020lamp,dang2019graph,surmann2003autonomous}. Recent efforts include low-cost robots for exploration~\cite{muller2021openbot, zhou2021smartphone,faisal2021low} but lack terrain adaptability~\cite{muller2021openbot} and computational capabilities~\cite{zhou2021smartphone,faisal2021low}.
 
-Furthermore, in areas that are ambiguous or challenging to traverse--albeit autonomous--state-of-the-art approaches rely on humans for supervision and high-level decision-making~\cite{tranzatto2022cerberus,roucek2020darpa}. 
-As a result, robots often operate close to humans or require expensive network equipment, such as a mesh of communication devices~\cite{tranzatto2022cerberus,kulkarni2022autonomous}, or existing network infrastructure~\cite{khairuldanial2019mobile,baek2022ros,voigtlander20175g}, thereby restricting autonomous exploration to indoor settings only~\cite{delgado2022oros,cadena2016past,eldemiry2022autonomous}.
-Conversely, our methodology exploits LoRa--an inexpensive long-range and low-power communication technology~\cite{shanmuga2020survey} from the internet-of-things domain--with a customized communication protocol.
+Furthermore, in areas that are ambiguous or challenging to traverse--albeit autonomous--state-of-the-art approaches rely on humans for supervision and high-level decision-making~\cite{tranzatto2022cerberus,roucek2020darpa,tabib2022autonomous}. 
+As a result, robots often operate close to humans or require expensive network equipment, such as a mesh of communication devices~\cite{tranzatto2022cerberus,kulkarni2022autonomous,ebadi2020lamp}, or existing network infrastructure~\cite{khairuldanial2019mobile,baek2022ros,voigtlander20175g}, thereby restricting autonomous exploration to indoor settings only~\cite{delgado2022oros,cadena2016past,eldemiry2022autonomous,corah2019communication,papachristos2017uncertainty}.
+Conversely, our methodology exploits LoRa--an inexpensive long-range and low-power communication technology~\cite{shanmuga2020survey} from the internet-of-things domain--with a customized communication protocol. 
+Exploiting the protocol for human intervention in, e.g., the eventuality of the robot being unable to move with local sensory information, our approach further consists of RB5--a novel rocker-bogie-like mobile robot capable of traversing rough terrain--and of an open-source exploration framework.
+
+The remainder of the letter is then structured as follows. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, Sec.~\ref{sec:md} describes RB5 from the mechanical standpoint, conversely to Sec.~\ref{sec:le}, which discusses its methodology for autonomous exploration. Sec.~\ref{sec:fe} describes indoors and outdoors ``in the field'' experiments, whereas Sec.~\ref{sec:cf} drafts conclusions a proposes future directions. 
 
 
+%Utilizing the advantages of LoRa for long-range communication, we propose the mechanical design and the  
 %%%%%
 
 
 
 \section{Related Work}
+\label{sec:rw}
 
-\subsection{Exploratory Robots}
+\section{Problem Formulation}
+\label{sec:pf}
 
-Legged robots have recently demonstrated to be physically capable of robustly traversing challenging real-world terrains \cite{tranzatto2022cerberus}, including slopes, stairs, gaps, obstacles, and soft, hard or slippery soils. Although, tracked or wheeled robotic platforms might struggle to attempt such mobility under certain conditions, wheeled robots still offer a number of attractive advantages for autonomous exploration. These include (i) high-speed motion and stability, (ii) no need for overhead computation for gait adaptation and planning, and, more importantly, (iii) low-cost compromises on sensory richness, computational power, and communication capabilities \cite{muller2021openbot}.
+\section{RB5 Mechanical Design}
+\label{sec:md}
 
-\subsection{Autonomous Exploration}
+\section{Large-Scale Exploration}
+\label{sec:le}
 
-Frontier-based navigation \cite{yamauchi1997frontier} has been one of the most successful methods applied for autonomous robot exploration. These have been adapted for diverse sensing modalities of the environment, spanning from raw sensor measurements to topological, metric, semantic or hybrid map representations \cite{placed2022survey}, \cite{batinovic2021multi}. 
+\section{Field Experiments}
+\label{sec:fe}
+
+\section{Conclusion and Future Directions}
+\label{sec:cf}
+
+%\subsection{Exploratory Robots}
+
+%Legged robots have recently demonstrated to be physically capable of robustly traversing challenging real-world terrains \cite{tranzatto2022cerberus}, including slopes, stairs, gaps, obstacles, and soft, hard or slippery soils. Although, tracked or wheeled robotic platforms might struggle to attempt such mobility under certain conditions, wheeled robots still offer a number of attractive advantages for autonomous exploration. These include (i) high-speed motion and stability, (ii) no need for overhead computation for gait adaptation and planning, and, more importantly, (iii) low-cost compromises on sensory richness, computational power, and communication capabilities \cite{muller2021openbot}.
+
+%\subsection{Autonomous Exploration}
+
+%Frontier-based navigation \cite{yamauchi1997frontier} has been one of the most successful methods applied for autonomous robot exploration. These have been adapted for diverse sensing modalities of the environment, spanning from raw sensor measurements to topological, metric, semantic or hybrid map representations \cite{placed2022survey}, \cite{batinovic2021multi}. 
 
 
 %%%%%
@@ -662,7 +687,7 @@ Frontier-based navigation \cite{yamauchi1997frontier} has been one of the most s
 %\end{IEEEbiographynophoto}
 
 
-
+\newpage
 {\small\bibliographystyle{IEEEtran}  %
 %\bibliography{../../books/phd-thesis/backmatter/references}}
 \bibliography{rb5-paper}}  
