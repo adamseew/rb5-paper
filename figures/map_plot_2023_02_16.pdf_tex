@@ -1,0 +1,87 @@
+%% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figures/map_plot_2023_02_16.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{305bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.75)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.16343946,0.41836286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.16402696,0.34339804){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.14138911,0.26440982){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize x (m)\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.17898964,0.25701714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.81040696,0.21458125){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 25\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.71532661,0.1887675){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.51349357,0.09560857){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\rotatebox{15}{\scriptsize\color{red} z, depth (m)}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.61623018,0.16186339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.17977821,0.1563975){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.51285768,0.13379821){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.41206929,0.10449554){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.29927054,0.07387125){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figures/map_plot_2023_02_16.pdf}}%
+    \put(0.12869054,0.49910714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize -2\end{tabular}}}}%
+    \put(0.12869054,0.57142857){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
+    \put(0.12869054,0.64375){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 2\end{tabular}}}}%
+    \put(0.17869054,0.50982143){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize y, height (m)\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figures/map_plot_2023_02_16.pdf}}%
+  \end{picture}%
+\endgroup%

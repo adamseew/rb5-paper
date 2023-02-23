@@ -3,12 +3,15 @@
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{array}
-\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
 \usepackage{textcomp}
 \usepackage{stfloats}
 \usepackage{url}
 \usepackage{verbatim}
-\usepackage{graphicx}
+%\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[font=footnotesize]{caption}
+\usepackage[font=footnotesize]{subcaption}
 \usepackage{cite}
 \hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
 % updated with editorial comments 8/9/2021
@@ -54,7 +57,7 @@
 
 \maketitle
 
-\begin{abstract}
+\begin{abstract} 
 %This document describes the most common article elements and how to use the IEEEtran class with \LaTeX \ to produce files that are suitable for submission to the IEEE.  IEEEtran can produce conference, journal, and technical note (correspondence) papers with a suitable choice of class options. 
 %In this paper, we present a robotic system-of-systems involving a six-wheel mobile robot
 %with resilient autonomy, as well as mapping, planning, and navigation capabilities 
@@ -92,17 +95,12 @@ Rocker-bogie mobile robots comprise a multi-body system with a moving base~\cite
 Hardware-wise, RB5 maintains a lower sensory footprint with low-cost components, whereas 
 software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, RB5 derives its position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab,campos2021orb}, and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia201guidance,seewaldphdthesis}. This allows RB5 to explore its surroundings at lower frequencies, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
-The remainder of the letter is then structured as follows. In Section~\ref{sec:fe} data show improved ``coverage per cost'' over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
-Sec.~\ref{sec:md}--\ref{sec:le} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
+The remainder of the letter is structured as follows. In Section~\ref{sec:fe} data show improved ``coverage per cost'' over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
+Sec.~\ref{sec:md}--\ref{sec:le} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
 and future directions.
-
-
-
 
 %Utilizing the advantages of LoRa for long-range communication, we propose the mechanical design and the  
 %%%%%
-
-
 
 \section{Related Work}
 \label{sec:rw}
@@ -121,6 +119,32 @@ and future directions.
 
 \section{Conclusion and Future Directions}
 \label{sec:cf}
+
+\begin{figure*}[p]
+  \vspace*{-.6cm}
+  \begin{minipage}{.47\textwidth}
+    \centering
+    \hspace*{-1.2cm}
+    \input{figures/map_plot_2023_02_16.pdf_tex}%/media/user/dddd092a/RB5-PAPER/HILL17/map_plot_2023_02_16.tex}
+    \label{fig:prob1_6_2}
+  \end{minipage}  
+  \begin{minipage}{.25\textwidth}
+    \centering
+    \input{figures/nav_plot_2023_02_16_1.pdf_tex}%/media/user/dddd092a/RB5-PAPER/HILL17/map_plot_2023_02_16.tex}
+    \vspace*{-.05cm}
+    \input{figures/vec2_plot_2023_02_16_1.pdf_tex}%/media/user/dddd092a/RB5-PAPER/HILL17/map_plot_2023_02_16.tex}
+    \label{fig:prob1_6_1}
+  \end{minipage}
+  \begin{minipage}{.26\textwidth}
+    \centering
+    \input{figures/nav_plot_2023_02_16_2.pdf_tex}%/media/user/dddd092a/RB5-PAPER/HILL17/map_plot_2023_02_16.tex}
+    \vspace*{-.05cm}
+    \input{figures/vec2_plot_2023_02_16_2.pdf_tex}%/media/user/dddd092a/RB5-PAPER/HILL17/map_plot_2023_02_16.tex}
+    \label{fig:prob1_6_1}
+  \end{minipage}
+  \caption{}
+\end{figure*}
+
 
 %\subsection{Exploratory Robots}
 
@@ -699,7 +723,6 @@ and future directions.
 %\end{IEEEbiographynophoto}
 
 
-\newpage
 {\small\bibliographystyle{IEEEtran}  %
 %\bibliography{../../books/phd-thesis/backmatter/references}}
 \bibliography{rb5-paper}}  
