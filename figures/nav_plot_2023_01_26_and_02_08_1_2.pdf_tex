@@ -1,0 +1,81 @@
+%% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figures/nav_plot_2023_01_26_and_02_08_1_2.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{132.5bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.7)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.3404331,0.04819517){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.21143034,0.05651138){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.59856034,0.08373931){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.11441862,0.1031669){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.53759276,0.0115631){\rotatebox{7}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize x (m)\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.01547531,0.1083644){\rotatebox{-40}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize y (m)\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.86400034,0.12029034){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize -1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.08855862,0.48550241){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 1\end{tabular}}}}%
+    \put(0.0102431,0.31456724){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} z (m)\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.09809483,0.15155966){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.04374345,0.35390448){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+    \put(0.08162759,0.22003241){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figures/nav_plot_2023_01_26_and_02_08_1_2.pdf}}%
+  \end{picture}%
+\endgroup%
