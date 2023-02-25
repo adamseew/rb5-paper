@@ -36,7 +36,7 @@
 \usepackage{amsthm}
 
 %% correct bad hyphenation here
-\hyphenation{}
+\hyphenation{obs-tacles}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
@@ -107,7 +107,7 @@ autonomous exploration is especially useful in dynamic environments with no prio
 Despite recent advancements, autonomy is limited and costly in such environments. 
 Many approaches that tackle autonomous exploration 
 integrate commercial robots with sensing equipment that is both prohibitively expensive and difficult to maintain~\cite{lluvia2021active,placed2022survey,muller2021openbot,tabib2022autonomous,tardioli2019ground,ebadi2020lamp,dang2019graph,surmann2003autonomous}. 
-There is a wide range of methodologies for autonomous exploration at present~\cite{placed2022survey} nonetheless, which span from algorithmic foundations~\cite{yamauchi1997frontier,placed2022survey,dang2019graph} to system-of-systems frameworks where, e.g., a multitude of robots integrate existing algorithms with sensors for large-scale exploration~\cite{tranzatto2022cerberus,roucek2020darpa,tardioli2019ground,tabib2022autonomous,ebadi2020lamp}. 
+There is a wide range of methodologies for autonomous exploration at present~\cite{placed2022survey,julia2012comparison} nonetheless, which span from algorithmic foundations~\cite{yamauchi1997frontier,placed2022survey,dang2019graph} to system-of-systems frameworks where, e.g., a multitude of robots integrate existing algorithms with sensors for large-scale exploration~\cite{tranzatto2022cerberus,roucek2020darpa,tardioli2019ground,tabib2022autonomous,ebadi2020lamp}. 
 Recent efforts in this direction include low-cost robots for exploration~\cite{muller2021openbot, zhou2021smartphone,faisal2021low} but lack terrain adaptability~\cite{muller2021openbot} and computational capabilities~\cite{zhou2021smartphone,faisal2021low} often required to navigate outdoors in the real-world~\cite{rubio2019review,kulkarni2022autonomous}.
 
 Furthermore, in areas that are ambiguous or challenging to traverse--albeit autonomous--state-of-the-art approaches rely on humans for supervision and high-level decision-making~\cite{tranzatto2022cerberus,roucek2020darpa,tabib2022autonomous}. 
@@ -134,13 +134,25 @@ and future directions.
 \section{Problem Formulation}
 \label{sec:pf}
 
-The problem considered in this work to showcase RB5 for large-scale exploration is that of exploring a bounded volume, $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$, deriving collision-free trajectories that avoid $i\in[n],\,n\in\mathbb{N}_{\geq 0}$ obstacles delimited by $\mathcal{Q}^{o_i}\subset\mathbb{R}^3$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{o_i}$ for each $i$ with a set of vertices within which the two sets are contained.
+The problem considered in this work to showcase RB5 for large-scale exploration is that of exploring a bounded volume $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$. If the notation $[n]$ denotes a set with positive naturals up to $n$ and $[n]_{>0}$ with strictly positive naturals, we are interested in collision-free trajectories that explore $\mathcal{Q}$ and avoid $i\in[n]_{>0},n\in\mathbb{N}_{\geq 0}$ obstacles $\mathcal{Q}^{O_i}\subset\mathbb{R}^3$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{O_i}$ for each $i$ with a set of vertices within which the two sets are contained.
 
 \begin{pb}[Exploration]
-  Consider sets of vertices $v:=\{v_1,$ $v_2,\dots\}$ and $o_i:=\{o_{i,1},o_{i,2},\dots\}$ with $i\in[n],\,v_j,o_{i,k}\in\mathbb{R}^2,$ $\forall j\in[|v|],\,k\in[|o_i|]$ a point w.r.t. $\mathcal{O}_W$. Let $v$ enclose $\mathcal{Q}$, $o_i$ $\mathcal{Q}^{o_i}$ per each $i$. The \textit{exploration problem} is to find a trajectory that visits each point $\mathbf{p}\in\mathcal{Q}\cap\mathcal{Q}^{o_1}\cap\mathcal{Q}^{o_2}\cap\cdots\cap\mathcal{Q}^{o_n}$.
+  Consider sets of vertices $V:=\{\mathbf{v}_1,$ $\mathbf{v}_2,\dots\}$, $O_i:=\{\mathbf{o}_{i,1},\mathbf{o}_{i,2},\dots\}$ with $i\in[n],\mathbf{v}_j,\mathbf{o}_{i,k}\in\mathbb{R}^2,$ $\forall j\in[|v|],\,k\in[|o_i|]$ a point w.r.t. $\mathcal{O}_W$. Let $V$ enclose $\mathcal{Q}$, $O_i$ $\mathcal{Q}^{O_i}$ per each $i$. The \textit{exploration problem} is the problem of finding the coverage that visits each point $\mathbf{p}\in\mathcal{Q}\cap\mathcal{Q}^{O_1}\cap\mathcal{Q}^{O_2}\cap\cdots\cap\mathcal{Q}^{O_n}:=\mathcal{Q}^V$.
 \end{pb}
 
+Here the notation $|\cdot|$ denotes the cardinality and $\mathbb{R}$, $\mathbb{Z}$ are reals and integers. Bold notation is used for vectors.
 
+Let $\phi$ be a path function, i.e., a function RB5 tracks as it explores its surroundings in $\mathcal{Q}^V$, avoiding the obstacles $\mathcal{Q}^{O_i}$.
+
+\begin{defn}[Path function]\label{def:pf}
+  $\phi:\mathbb{R}^2\rightarrow\mathbb{R}$ is a two-dimensional continuous and differentiable \textit{path function} of the $x$, $y$ components of $\mathbf{p}$.
+\end{defn}
+
+\begin{defn}[Coverage]
+  Given a tuple with a path function and its time component, $\langle\phi,t\rangle$, the \textit{coverage} is the collection of multiple tuples.
+\end{defn}
+
+The large-scale exploration framework (see Sec.~\ref{sec:le}) derives $\phi$ at each sampling step and adds it to the global ``coverage stack''. The process ends once $\mathcal{Q}^V$ is covered.
 
 \section{RB5 Mechanical Design}
 \label{sec:md}
@@ -148,17 +160,32 @@ The problem considered in this work to showcase RB5 for large-scale exploration 
 \section{Large-Scale Exploration}
 \label{sec:le}
 
+There is a large body of work for robot exploration~\cite{lavalle2006planning,yamauchi1997frontier,placed2022survey,dang2019graph,julia2012comparison}. 
+While the majority exploits the concept of frontiers~\cite{wenchuan2019sampling}, i.e., boundaries between known and unknown space, mixed approaches are emerging~\cite{dai2020fast,schmid2020efficient,placed2022survey}. 
+Especially useful in the presence of diverse sensing modalities, e.g., involving raw sensory data, topologies, semantics, etc., they have multiple %potential 
+advantages for real-world environments~\cite{placed2022survey,batinovic2021multi}. 
+%
+We propose a %one 
+mixed approach for RB5 large-scale exploration framework, combining frontier- and sampling-based methods, similar to some recent approaches~\cite{dai2020fast,wenchuan2019sampling},~\cite{dang2019graph}. % forcing latex not to split lines...
+
+The framework evaluates local frontiers at each step, samples the environment, and determines feasible candidate path functions $\phi$ that intersect $\mathcal{Q}^V$ (Definition~\ref{def:pf}).
+The next $\phi$ is selected so that the frontier is largest, but  other costs are also possible (see Sec.~\ref{sec:cf}). 
+The framework then derives a path-following vector field that points to $\phi$ at any point, and guides the robot utilizing the gradient descent algorithm. This allows RB5 to, e.g., follow the covering path longer than approaches that utilize frontiers only, decreasing computational and cost requirements (see Sec.~\ref{sec:fe}).
+
+Let the gradient of $\phi$ be defined
+\begin{equation}
+  \nabla\phi:=\begin{bmatrix}
+    \partial\phi(\mathbf{p})/\mathbf{p}_x\\
+    \partial\phi(\mathbf{p})/\mathbf{p}_y
+  \end{bmatrix},
+\end{equation}
+where $\partial\phi/\mathbf{p}$ is the differntial and $\mathbf{p}_x$, $\mathbf{p}_y$ are the $x$ and $y$ compoenents of $\mathbf{p}$.
+
 \section{Field Experiments}
 \label{sec:fe}
 
 \section{Conclusion and Future Directions}
 \label{sec:cf}
-
-\newpage
-~~
-
-\newpage
-
 
 \begin{figure*}[p]
   \begin{subfigure}[m]{0.48\textwidth}
@@ -211,6 +238,12 @@ The problem considered in this work to showcase RB5 for large-scale exploration 
   \caption{.      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .}
   \label{fig:2}
 \end{figure*}
+
+\newpage
+~~
+
+\newpage
+
 
 %\subsection{Exploratory Robots}
 
