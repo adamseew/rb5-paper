@@ -1,5 +1,6 @@
 \documentclass[lettersize,journal]{IEEEtran}
 \usepackage{amsmath,amsfonts}
+\usepackage{amssymb}
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{array}
@@ -118,7 +119,7 @@ for human intervention in, e.g., the eventuality of the robot being unable to mo
 Starting from the cost advantages of LoRa communication, we develop here RB5--a novel rocker-bogie-like mobile robot capable of exploring autonomously dynamic indoor and outdoor environments--and an open-source robot operating system (ROS)-based~\cite{quigley2009ros} exploration framework.
 Rocker-bogie mobile robots comprise a multi-body system with a moving base~\cite{setterfield2013terrain,mann2005dynamic,faisal2021low} (see Figure~\ref{}) and provide rough terrain static adaptability~\cite{kim2012optimal}. They are cheaper than, e.g., legged robots in terms of cost per unit and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
 Hardware-wise, RB5 maintains a lower sensory footprint with low-cost components, whereas 
-software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, RB5 derives its position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab,campos2021orb}, and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia201guidance,seewaldphdthesis}. This allows RB5 to explore its surroundings at lower frequencies, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
+software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, RB5 derives its position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab,campos2021orb}, and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows RB5 to explore its surroundings at lower frequencies, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
 The remainder of the letter is structured as follows. In Section~\ref{sec:fe} data show improved ``coverage per cost'' over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
 Sec.~\ref{sec:md}--\ref{sec:le} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
@@ -148,7 +149,7 @@ Let $\phi$ be a path function, i.e., a function RB5 tracks as it explores its su
   $\phi:\mathbb{R}^2\rightarrow\mathbb{R}$ is a two-dimensional continuous and differentiable \textit{path function} of the $x$, $y$ components of $\mathbf{p}$.
 \end{defn}
 
-\begin{defn}[Coverage]
+\begin{defn}[Coverage]\label{def:co}
   Given a tuple with a path function and its time component, $\langle\phi,t\rangle$, the \textit{coverage} is the collection of multiple tuples.
 \end{defn}
 
@@ -170,16 +171,71 @@ mixed approach for RB5 large-scale exploration framework, combining frontier- an
 
 The framework evaluates local frontiers at each step, samples the environment, and determines feasible candidate path functions $\phi$ that intersect $\mathcal{Q}^V$ (Definition~\ref{def:pf}).
 The next $\phi$ is selected so that the frontier is largest, but  other costs are also possible (see Sec.~\ref{sec:cf}). 
-The framework then derives a path-following vector field that points to $\phi$ at any point, and guides the robot utilizing the gradient descent algorithm. This allows RB5 to, e.g., follow the covering path longer than approaches that utilize frontiers only, decreasing computational and cost requirements (see Sec.~\ref{sec:fe}).
+The framework then derives a path-following vector field that points to $\phi$ at any point, and guides the robot utilizing the gradient descent algorithm. This allows RB5 to, e.g., follow the covering path for longer and in real-time compared to approaches that utilize frontiers only, decreasing computational and cost requirements (see Sec.~\ref{sec:fe}).
 
-Let the gradient of $\phi$ be defined
-\begin{equation}
+To derive the path-following vector field, let the gradient of $\phi$ be defined
+\begin{equation}\small
   \nabla\phi:=\begin{bmatrix}
     \partial\phi(\mathbf{p})/\mathbf{p}_x\\
     \partial\phi(\mathbf{p})/\mathbf{p}_y
   \end{bmatrix},
 \end{equation}
 where $\partial\phi/\mathbf{p}$ is the differntial and $\mathbf{p}_x$, $\mathbf{p}_y$ are the $x$ and $y$ compoenents of $\mathbf{p}$.
+It points in the direction where $\phi$ maxi-mally increases. To assign such direction to each point, we use the construct of vector fields similarly to other motion planning literature~\cite{lavalle2006planning,garcia2017guidance,goncalves2010vector}
+\begin{equation}\label{eq:vecf}
+  \Phi(t,\phi):={\textstyle \bigcup\limits_{\mathbf{p}(t)\in\mathcal{Q}}}\nabla\phi(\mathbf{p}(t)).
+\end{equation}
+
+We modify the vector field in Equation~(\ref{eq:vecf}) to point to the contour of the path function $\phi$ rather than its local maxima
+\begin{equation}\label{eq:pfvf}
+  \Delta\phi(\mathbf{p}(t)):=E\nabla\phi(\mathbf{p}(t))-k_e\phi(\mathbf{p}(t))\nabla\phi(\mathbf{p}(t)),
+\end{equation}
+where $E\nabla\phi$ points perpendicularly to the gradient and $\phi\nabla\phi$ to $\phi$ at $k_e\in\mathbb{R}_{>0}$ rate~\cite{garcia2017guidance}. $E$ is the following direction, i.e.,
+\begin{equation}\small
+  E=\begin{bmatrix}
+    1 & 0\\ 0 & -1
+  \end{bmatrix},
+\end{equation}
+is the counterclockwise, $-E$ the clockwise direction~\cite{seewaldphdthesis}.
+
+Let thus the path following of vector field from Eq.~(\ref{eq:vecf}) be 
+\begin{equation}
+  \Phi_\phi(t,\phi):={\textstyle \bigcup\limits_{\mathbf{p}(t)\in\mathcal{Q}}}\Delta\phi(\mathbf{p}(t)).
+\end{equation}
+
+
+\begin{algorithm}[t]
+  \begin{algorithmic}[1]
+    \small
+    \FORALL{$t\in\mathcal{T}$}
+      \STATE \textbf{if} $\mathcal{P}\cap\mathcal{Q}=\{\varnothing\}$ \textbf{then return }$\langle\phi,t\rangle$\vspace*{.3ex}
+      \STATE $\mathcal{Q}^V_t:=O_{1,t},O_{2,t},\dots,O_{n,t},V_t\gets$ sensors readings\vspace*{.3ex}
+      \IF{$\mathcal{Q}_t^V\neq\mathcal{Q}_{t-1}^V$}\vspace*{.3ex}
+        \STATE $\{\phi_{1,t},\phi_{2,t},\dots\}\gets$ $\phi$s in Def.~\ref{def:pf}, inters. $\mathcal{Q}^V\cap h(\mathcal{Q}^V_t)$\label{alg:vp}\vspace*{.3ex}
+        \STATE \textbf{if} $\phi_t:=\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ \textbf{then }RB5 is stuck\vspace*{.3ex}
+        \STATE \textbf{else}
+        \STATE $\,\,\,\,\,\,\phi_t\gets \argmax_{\phi}l(\phi_t,t,\mathcal{Q}_t^V)$ in Eq.~(\ref{eq:cost})\label{alg:am}\vspace*{.3ex}
+        \STATE $\,\,\,\,\,\,\langle\phi,t\rangle\gets\langle\phi,t\rangle\cup\langle\phi_t,t\rangle$ in Def.~\ref{def:co}\vspace*{.3ex}
+        \STATE $\,\,\,\,\,\,\mathcal{P}\gets\mathcal{P}\cup h(\mathcal{Q}_t^V)$
+        \STATE \textbf{end if}
+        \vspace*{.3ex}
+      \ENDIF
+      \STATE $\varphi(t,\mathbf{p}(t))\gets\varphi(t-1)+\theta\Delta\phi(\mathbf{p}(t))$ in Eq.~(\ref{eq:pfvf})\vspace*{.3ex}\label{alg:vf}
+    \ENDFOR
+  \end{algorithmic}
+  \caption{Real-time autonomous large-scale exploration}\label{alg}
+\end{algorithm}
+
+The path-following vector field is included in the pseudo-code in Algorithm~\ref{alg}, Line~\ref{alg:vf}.
+
+The cost $l$ in Line~\ref{alg:am} is evaluated by taking the function $\phi$ that selects the largest frontier, e.g., if there are no obstavcles $\phi$ is a line that interset RB5 current point $\mathbf{p}$ and the mid-point between the field-of-view. Formally
+\begin{equation}\label{eq:cost}\small
+  l:=\{\lVert \mathbf{p}_1\hspace*{-.5ex}-\mathbf{p}_2\rVert\,|\,\exists\,\mathbf{p}_1,\mathbf{p}_2\hspace*{-.5ex}\in\hspace*{-.5ex}\mathcal{Q}_t^V\text{ s.t. }\mathbf{p}_1\hspace*{-.5ex}\neq\hspace*{-.5ex}\mathbf{p}_2,\phi(\mathbf{p}_1-\mathbf{p}_2)\approx 0\},
+\end{equation}
+where the condition $\phi(\mathbf{p}_1-\mathbf{p}_2)$ is evaluated on a given $\varepsilon\in\mathbb{R}_{>0}$, i.e., $|\phi(\mathbf{p}_1-\mathbf{p}_2)|<\varepsilon$.
+
+In Line~\ref{alg:vp} the function $h:\mathbb{R}^{2n}\times\mathbb{R}^2\rightarrow\mathbb{R}^{3n}\times\mathbb{R}^3$ maps the vertices to the volume.
+
 
 \section{Field Experiments}
 \label{sec:fe}
@@ -239,7 +295,6 @@ where $\partial\phi/\mathbf{p}$ is the differntial and $\mathbf{p}_x$, $\mathbf{
   \label{fig:2}
 \end{figure*}
 
-\newpage
 ~~
 
 \newpage
