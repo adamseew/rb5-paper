@@ -116,6 +116,13 @@ As a result, robots often operate close to humans or require expensive network e
 Conversely, our methodology exploits LoRa--an inexpensive long-range and low-power communication technology~\cite{shanmuga2020survey} from the internet-of-things domain--with a customized communication protocol 
 for human intervention in, e.g., the eventuality of the robot being unable to move with the local sensory information. 
 
+\begin{figure}
+  \input{figures/small_abs.pdf_tex}
+  \caption{.      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .}
+  \label{fig:1}
+\end{figure}
+\IEEEpubidadjcol
+
 Starting from the cost advantages of LoRa communication, we develop here RB5--a novel rocker-bogie-like mobile robot capable of exploring autonomously dynamic indoor and outdoor environments--and an open-source robot operating system (ROS)-based~\cite{quigley2009ros} exploration framework.
 Rocker-bogie mobile robots comprise a multi-body system with a moving base~\cite{setterfield2013terrain,mann2005dynamic,faisal2021low} (see Figure~\ref{}) and provide rough terrain static adaptability~\cite{kim2012optimal}. They are cheaper than, e.g., legged robots in terms of cost per unit and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
 Hardware-wise, RB5 maintains a lower sensory footprint with low-cost components, whereas 
@@ -128,7 +135,6 @@ and future directions.
 
 %Utilizing the advantages of LoRa for long-range communication, we propose the mechanical design and the  
 %%%%%
-\IEEEpubidadjcol
 
 \section{Related Work}
 \label{sec:rw}
@@ -245,11 +251,6 @@ Using the algorithm, the framework provides a way to explore space $\mathcal{Q}$
 
 To derive a map of the environment and to keep the track of RB5 within it in Line~\ref{alg:vf}, the framework uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. RB5's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs} and to asses exploration-to-cost (see Fig.~\ref{}).
 
-
-
-
-
-
 The framework %we propose 
 is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2~\cite{quigley2009ros} package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa protocols. The package further implements the serial communication with the microcontroller (a Teensy (R) board implemented in Arduino) and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D sensor (an Intel (R) RealSense (TM) Depth Camera~\cite{keselman2017intel} D435) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
 Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 and ROS respectively, whereas ``base station'' is in PHP and JavaScript.
@@ -311,10 +312,6 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
   \caption{.      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .}
   \label{fig:2}
 \end{figure*}
-
-~~
-
-\newpage
 
 ~~
 
