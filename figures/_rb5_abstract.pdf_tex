@@ -54,7 +54,7 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/_rb5_abstract.pdf}}%
-    \put(0.51113934,0.97138424){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\color{white}\scriptsize $\mathbf{p}(t_0)$\end{tabular}}}}%
+    \put(0.51113934,0.97138424){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize $\mathbf{p}(t_0)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/_rb5_abstract.pdf}}%
     \put(0.33825123,0.26356237){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\color{white}\footnotesize $\mathbf{p}(t_1)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/_rb5_abstract.pdf}}%
