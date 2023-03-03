@@ -130,7 +130,7 @@ software-wise, it integrates multiple modules into the exploration framework. Be
 and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows RB5 to explore its surroundings at lower frequencies, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
 The remainder of the letter is structured as follows. In Section~\ref{sec:fe} data show improved ``coverage per cost'' over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
-Sec.~\ref{sec:md}--\ref{sec:le} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
+Secs.~\ref{sec:m} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
 and future directions.
 
 %Utilizing the advantages of LoRa for long-range communication, we propose the mechanical design and the  
@@ -162,14 +162,21 @@ Let $\phi$ be a path function, i.e., a function RB5 tracks as it explores its su
 
 The large-scale exploration framework (see Sec.~\ref{sec:le}) derives $\phi$ at each sampling step and adds it to the global ``coverage stack''. The process ends once $\mathcal{Q}^V$ is covered.
 
-\section{RB5 Mechanical Design}
+\section{Methods}
+\label{sec:m}
+
+The methods section justifies design and implementation choices for the RB5 robot in terms of both the low-cost hardware design and the software implementation for autonomous large-scale exploration in respectively Sec.~\ref{sec:md}~and~\ref{sec:le}.
+
+\subsection{Low-cost hardware design}
 \label{sec:md}
 
 The RB5 mobile robot adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{kim2012optimal,mann2005dynamic,faisal2021low} as the rocker and bogie pivot to maintain wheel contact~\cite{mann2005dynamic}.
-
+%
 Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear motor, whereas the rotational degrees of freedom in the rocker-bogie suspensions are passive. Since the wheels are all parallel and cannot rotate out of the plane, the robot uses the same actuation strategy as that of a differential drive vehicle to move straight and make turns by controlling the left and right sets of wheels in the same and opposite directions. Given that RB5 has multiple wheels on each side, its ability to make turns is reduced compared to a differential drive vehicle. Due to its extended body length, RB5 incorporates a caster wheel in the back to support the rear end of the frame.
 
-\section{Large-Scale Exploration}
+The robot frame's dimensions are 914 by 330 millimeters, and the robot's bounding box dimensions are 991 by 762 mm. The frame consists of one inch aluminum extrusions and acrylic sheets, and the rocker and bogie linkages are assembled from aluminum sheets and standoffs. The pivots of the bogie and rocker sit at 240 and 330 mm from the ground respectively, providing a clearance of approximately 190 mm beneath the robot frame. The two wheels on each bogie linkage are coplanar, but the wheel on the corresponding rocker linkage is closer to the medial plane of the robot. Motor control is performed by a Teensy (R) 4.0 microcontroller board sending PWM commands to six DRV8871 motor driver boards. An onboard 24 volts LiFePO${}_\text{4}$ battery provides power for the logic boards and motor drives.
+
+\subsection{Autonomous large-scale exploration}
 \label{sec:le}
 
 \begin{figure*}
@@ -185,14 +192,14 @@ Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear m
     \hspace*{-.15cm}
     \input{figures/_GOPR0985.pdf_tex}
     \caption{.      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .}
-    \label{fig:3-1}
+    \label{fig:3-2}
   \end{subfigure}
   \begin{subfigure}[m]{0.33\textwidth}
     \centering
     \hspace*{.05cm}
     \input{figures/_GOPR0990.pdf_tex}
     \caption{.      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .}
-    \label{fig:3-1}
+    \label{fig:3-3}
   \end{subfigure}
   \caption{.      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .     .      .      .      .      .      .      .      .      .      .      .      .      .      .      .}
   \label{fig:3}
@@ -279,10 +286,12 @@ where the condition $\phi(\mathbf{p}_1-\mathbf{p}_2)$ is evaluated on a given $\
 
 Using the algorithm, the framework provides a way to explore space $\mathcal{Q}$ and avoid obstacles $\mathcal{Q}^{O_i}$. There are configurations at which there are no feasible trajectories nonetheless, e.g., if $\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ in Line~\ref{alg:mpty}. In this scenario, the framework allows a human to intervene via standard wireless and LoRa communication technology. RB5 can then be teleoperated on long distances--studies from the internet-of-things domain~\cite{shanmuga2020survey,raza2017lora} report a range of up to five kilometers in an urban setting--and with a relatively inexpensive hardware equipment (two LoRa bundles). The framework we propose utilizes a web interface to parse human commands into our custom communication protocol which utilizes the LoRa physical layer's payload to transfer $\varphi$'s $x$ and $y$ components.
 
+The algorithm is illustrated in Fig.~\ref{fig:3}. At each iteration, RB5 samples the environment and derives a set of possible candidate trajectories $\{\phi_{1,t},\phi_{2,t},\dots\}$. If there is no obstacle ahead, the optimal trajectory per iteration $\phi_t$ is a line parallel to RB5's direction of travel (see Fig.~\ref{fig:3-3}). If there are obstacles, the framework selects the trajectory via the cost $l$, $\phi_t$, which goes through the middle of the largest frontier (see Fig.~\ref{fig:3-1}~and~\ref{fig:3-2} for respective obstacles ``wheel'' and ``wall'').
+
 To derive a map of the environment and to keep the track of RB5 within it in Line~\ref{alg:vf}, the framework uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. RB5's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs} and to asses exploration-to-cost (see Fig.~\ref{}).
 
 The framework %we propose 
-is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2~\cite{quigley2009ros} package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa protocols. The package further implements the serial communication with the microcontroller (a Teensy (R) board implemented in Arduino) and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D sensor (an Intel (R) RealSense (TM) Depth Camera~\cite{keselman2017intel} D435) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
+is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2~\cite{quigley2009ros} package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa protocols. The package further implements the serial communication with the microcontroller implemented in Arduino and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D sensor (an Intel (R) RealSense (TM) Depth Camera~\cite{keselman2017intel} D435) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
 Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 and ROS respectively, whereas ``base station'' is in PHP and JavaScript.
 
 \section{Field Experiments}
