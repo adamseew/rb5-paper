@@ -123,14 +123,14 @@ for human intervention in, e.g., the eventuality of the robot being unable to mo
 \end{figure}
 \IEEEpubidadjcol
 
-Starting from the cost advantages of LoRa communication, we develop here RB5--a novel rocker-bogie-like mobile robot capable of exploring autonomously dynamic indoor and outdoor environments--and an open-source robot operating system (ROS)-based~\cite{quigley2009ros} exploration framework.
+Starting from the cost advantages of LoRa communication, we develop here RB5--a novel rocker-bogie-like mobile robot capable of exploring autonomously dynamic indoor and outdoor environments--and an exploration framework based on the open-source robot operating system (ROS) middleware~\cite{quigley2009ros}.
 Rocker-bogie mobile robots comprise a multi-body system with a moving base~\cite{setterfield2013terrain,mann2005dynamic,faisal2021low} (see Figure~\ref{fig:0}) and provide rough terrain static adaptability~\cite{kim2012optimal}. They are cheaper than, e.g., legged robots in terms of cost per unit and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
 Hardware-wise, RB5 maintains a lower sensory footprint with low-cost components, whereas 
 software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, RB5 derives its position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab}, %,campos2021orb}, 
 and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows RB5 to explore its surroundings at lower frequencies, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
 The remainder of the letter is structured as follows. In Section~\ref{sec:fe} data show improved ``coverage per cost'' over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
-Secs.~\ref{sec:m} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
+Sec.~\ref{sec:m} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
 and future directions.
 
 %Utilizing the advantages of LoRa for long-range communication, we propose the mechanical design and the  
@@ -278,7 +278,7 @@ compute the feasible path functions $\{\phi_{1,t},\phi_{2,t},\dots\}$ by interse
   a(x-\mathbf{p}_x)^3+b(x-\mathbf{p}_x)^2+c(x-\mathbf{p}_x)+d-y=0,
 \end{equation}
 where $a,b,c\in\mathbb{R}$ are the coefficients of the spline. 
-The best trajectory is then derived via the cost $l$ in Line~\ref{alg:am}, utilizing the intersection of the largest frontier. For instance, if there are no obstacles, Eqs.~(\ref{eq:spln}--\ref{eq:cost}) are such that $\phi$ is a line parallel to the direction of RB5. Formally
+The best trajectory is then derived via the cost $l$ in Line~\ref{alg:am}, utilizing the intersection of the largest frontier. For instance, if there are no obstacles, Eq.~(\ref{eq:spln}--\ref{eq:cost}) are such that $\phi$ is a line parallel to the direction of RB5. Formally
 \begin{equation}\label{eq:cost}\small
   l\hspace*{-.5ex}:=\hspace*{-.5ex}\bigl\{\lVert \mathbf{p}_1\hspace*{-.5ex}-\mathbf{p}_2\rVert\,|\,\exists\,\mathbf{p}_1,\hspace*{-.5ex}\mathbf{p}_2\hspace*{-.5ex}\in\hspace*{-.5ex}\Psi(\mathcal{Q}_t^V)\text{\hspace*{.5ex}s.t.\hspace*{.5ex}}\mathbf{p}_1\hspace*{-.5ex}\neq\hspace*{-.5ex}\mathbf{p}_2,\phi(\mathbf{p}_1-\mathbf{p}_2)\hspace*{-.5ex}\approx\hspace*{-.5ex}0\bigr\},
 \end{equation}
@@ -288,7 +288,7 @@ Using the algorithm, the framework provides a way to explore space $\mathcal{Q}$
 
 The algorithm is illustrated in Fig.~\ref{fig:3}. At each iteration, RB5 samples the environment and derives a set of possible candidate trajectories $\{\phi_{1,t},\phi_{2,t},\dots\}$. If there is no obstacle ahead, the optimal trajectory per iteration $\phi_t$ is a line parallel to RB5's direction of travel (see Fig.~\ref{fig:3-3}). If there are obstacles, the framework selects the trajectory via the cost $l$, $\phi_t$, which goes through the middle of the largest frontier (see Fig.~\ref{fig:3-1}~and~\ref{fig:3-2} for respective obstacles ``wheel'' and ``wall'').
 
-To derive a map of the environment and to keep the track of RB5 within it in Line~\ref{alg:vf}, the framework uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. RB5's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs} and to asses exploration-to-cost (see Fig.~\ref{}).
+To derive a map of the environment and to keep the track of RB5 within it in Line~\ref{alg:vf}, the framework uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. RB5's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs} and to asses exploration-to-cost (see Fig.~\ref{}), showing that the algorithm is effective in exploring unknown environments with a lower sensory footprint (see Sec.~\ref{sec:fe}). Furthermore, earlier iteration of the work exploited a different SLAM algorithm from the visual SLAM community~\cite{campos2021orb}, showing that some of the framework components are interchangeable.
 
 The framework %we propose 
 is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2~\cite{quigley2009ros} package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa protocols. The package further implements the serial communication with the microcontroller implemented in Arduino and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D sensor (an Intel (R) RealSense (TM) Depth Camera~\cite{keselman2017intel} D435) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
@@ -296,6 +296,19 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
 
 \section{Field Experiments}
 \label{sec:fe}
+
+Field experiments involving RB5 in autonomous large-scale exploration are conducted in a variety of environments, including indoors structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements the autonomous large-scale exploration framework. The computing hardware mounts peripherals for sensing the environment and for communication. The former group consists of a low-cost upward-facing RGB camera for detections (see Sec.~\ref{sec:cf}) and the RGB-D sensor (see Sec.~\ref{sec:le}), whereas the latter of a LoRa wireless network bundle with the RN2903 module of the Intel (R) AX200 network card for standard wireless communication via 802.11 protocol when, e.g., RB5 is in reach of an available wireless network.
+%
+All the components of the framework (detailed at the end of Sec.~\ref{sec:le}) run in real-time onboard RB5, and some additional processing, such as the derivation of the 3D reconstructions in the supplementary material, is carried on an external device connected to RB5's computing hardware via ROS network.
+
+Fig.~\ref{fig:1} shows experimental results for a structured indoor environment, a university hall, located on the second floor of a multistore building. The hall is composed of four connected corridors for a total approximate length of eighty meters in a closed circuit, i.e., the initial and final points coincide. The resulting point cloud is shown in Fig.~\ref{fig:1-3}, where the color scheme in the top-left indicates the different heights of points in the point cloud. The Low-cost components mitigation of the large-scale exploration framework in Sec.~\ref{sec:le} is to be observed in the figure, where between, e.g., fifteen and twenty meters on the z-axis and zero and five meters at the x-axis, there are significantly fewer points in the point cloud than in other parts of the figure. The algorithm here keeps track (see Line~\ref{alg:vf}) of the path function $\phi_t$ (see Line~\ref{alg:am}) in the event of, e.g., the computing hardware being busy while executing other tasks such as communication. While specific to the computing hardware onboard RB5, the occurrence and the unpredictable nature of the execution is common in the literature, especially if involving heterogeneous elements, i.e., CPU, GPU, and microcontrollers~\cite{seewald2019coarse}.
+
+Fig.~\ref{fig:1-1}--\ref{fig:1-2} shows the detail of the algorithm in the experiment in terms of obstacle detection and avoidance. Here RB5 detects an obstacle, a door with a surrounding wall, as it cruises through the hall at approximately fifteen and zero on the respective z- and x-axis. Fig.~\ref{fig:1-1} shows the initial detection of the obstacle on top. The vertices $V, O_i$ are the empty red circles and represent the field of view on the left and the edge of the obstacle on the right. On the bottom is the path-following vector field from Eq.~(\ref{eq:pfvf}) in red and the path function $\phi_t$ in cyan. Fig.~\ref{fig:1-2} shows the following time step as RB5 comes closer, and the robot has to perform a sharper maneuver to avoid the obstacle.
+
+Fig.~\ref{fig:2} shows an unstructured environment of a hall connecting to an underground tunnel on the respective left and right sides of Fig.~\ref{fig:2-1} for approximately one hundred meters. Conversely to the experiment in Fig.\ref{fig:1}, the experiment showcases an open circuit, in the sense that the exploration is considered concluded when a specific frontier from the initial frontier is encountered. Fig.~\ref{fig:2-2}--\ref{fig:2-3} shows the obstacle detection, similar to Fig.~\ref{fig:1-1}--\ref{fig:1-2}, for a wheel placed close to the left edge of the first length of the figure wide approximately 0.42 meters. The generated path with the robot avoiding the obstacle is to be observed between fifteen and twenty meters on the z-axis where in Fig.~\ref{fig:2}.
+
+The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see Fig.~\ref{fig:1-1}) and negative for right turns (see Fig.~\ref{fig:2-3}--\ref{fig:2-2}). The turning rate $k_e$ is derived empirically similar to other literature~\cite{seewald2022energy,garcia2017guidance}, and is 0.05, 0.1, and 0.4 depending on the turning maneuver, i.e., it is 0.05 when $\phi_t$ is a line (or close to it), 0.4 when a sharp curve in respectively Fig. 3b and Fig. 4c. The points in the point cloud are adjusted for height and length and filtered for visualization purposes, i.e., we have reported one point every two hundred and fifty, five hundred, etc., in Fig.~\ref{fig:1-3}~and~\ref{fig:2-1}.
+
 
 \section{Conclusion and Future Directions}
 \label{sec:cf}
@@ -352,13 +365,6 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
   \label{fig:2}
 \end{figure*}
 
-~~
-
-\newpage
-
-~~
-
-\newpage
 
 
 %\subsection{Exploratory Robots}
