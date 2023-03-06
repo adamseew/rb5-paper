@@ -62,14 +62,14 @@
 \begin{document}
 \bstctlcite{IEEEexample:BSTcontrol}
 
-\title{RB5: A Low-Cost Wheeled Robot for Real-Time Autonomous Large-Scale Exploration}%, 3D~Reconstruction, and Mapping}
+\title{A Low-Cost Approach for Real-Time\\Autonomous Large-Scale Exploration}%, 3D~Reconstruction, and Mapping}
 
-\author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$, Hector Castillo${}^\text{1}$, Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
+\author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$,\\Hector Castillo${}^\text{1}$, Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
         % <-this % stops a space
   \thanks{Manuscript received: Month, Day, Year; Revised Month, Day, Year; Accepted Month, Day, Year.}%Use only for final RAL version
   \thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments.} %Use only for final RAL version
   \thanks{${}^\text{1}$A.\hspace*{.4ex}S., C.\hspace*{.4ex}M., S.\hspace*{.4ex}N., O.\hspace*{.4ex}F., H.\hspace*{.4ex}C, I.\hspace*{.4ex}A., and A.\hspace*{.4ex}M.\hspace*{.4ex}D. are with the Department of Mechanical Engineering and Materials Science, Yale University, CT, USA. Email: {\tt\footnotesize \href{mailto:adam.seewald@yale.edu}{adam.seewald@yale.edu};}}
-  \thanks{C.\hspace*{.4ex}M.\hspace*{.4ex}C. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA.}
+  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}C. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA.}
   \thanks{Digital Object Identifier (DOI): see top of this page.}
 }
 
@@ -108,8 +108,9 @@ autonomous exploration is especially useful in dynamic environments with no prio
 Despite recent advancements, autonomy is limited and costly in such environments. 
 Many approaches that tackle autonomous exploration 
 integrate commercial robots with sensing equipment that is both prohibitively expensive and difficult to maintain~\cite{lluvia2021active,placed2022survey,muller2021openbot,tabib2022autonomous,tardioli2019ground,ebadi2020lamp,dang2019graph,surmann2003autonomous}. 
-There is a wide range of methodologies for autonomous exploration at present~\cite{placed2022survey,julia2012comparison} nonetheless, which span from algorithmic foundations~\cite{yamauchi1997frontier,placed2022survey,dang2019graph} to system-of-systems frameworks where, e.g., a multitude of robots integrate existing algorithms with sensors for large-scale exploration~\cite{tranzatto2022cerberus,roucek2020darpa,tardioli2019ground,tabib2022autonomous,ebadi2020lamp}. 
-Recent efforts in this direction include low-cost robots for exploration~\cite{muller2021openbot, zhou2021smartphone,faisal2021low} but lack terrain adaptability~\cite{muller2021openbot} and computational capabilities~\cite{zhou2021smartphone,faisal2021low} often required to navigate outdoors in the real-world~\cite{rubio2019review,kulkarni2022autonomous}.
+There is a wide range of methodologies for autonomous exploration at present~\cite{placed2022survey,julia2012comparison} nonetheless, which span from algorithmic foundations~\cite{yamauchi1997frontier,placed2022survey,dang2019graph} to system-of-systems frameworks where, e.g., a multitude of robots integrate existing algorithms with sensors for real-time large-scale exploration~\cite{tranzatto2022cerberus,roucek2020darpa,tardioli2019ground,tabib2022autonomous,ebadi2020lamp}. 
+Recent efforts in this direction include low-cost robots for exploration~\cite{muller2021openbot, zhou2021smartphone,faisal2021low} but lack terrain adaptability~\cite{muller2021openbot} and %computational 
+capabilities~\cite{zhou2021smartphone,faisal2021low} often required to navigate outdoors in the real-world~\cite{rubio2019review,kulkarni2022autonomous}.
 
 Furthermore, in areas that are ambiguous or challenging to traverse--albeit autonomous--state-of-the-art approaches rely on humans for supervision and high-level decision-making~\cite{tranzatto2022cerberus,roucek2020darpa,tabib2022autonomous}. 
 As a result, robots often operate close to humans or require expensive network equipment, such as a mesh of communication devices~\cite{tranzatto2022cerberus,kulkarni2022autonomous,ebadi2020lamp}, or existing network infrastructure~\cite{khairuldanial2019mobile,baek2022ros,voigtlander20175g}, thereby restricting autonomous exploration to indoor settings only~\cite{delgado2022oros,cadena2016past,eldemiry2022autonomous,corah2019communication,papachristos2017uncertainty}.
@@ -123,14 +124,18 @@ for human intervention in, e.g., the eventuality of the robot being unable to mo
 \end{figure}
 \IEEEpubidadjcol
 
-Starting from the cost advantages of LoRa communication, we develop here RB5--a novel rocker-bogie-like mobile robot capable of exploring autonomously dynamic indoor and outdoor environments--and an exploration framework based on the open-source robot operating system (ROS) middleware~\cite{quigley2009ros}.
-Rocker-bogie mobile robots comprise a multi-body system with a moving base~\cite{setterfield2013terrain,mann2005dynamic,faisal2021low} (see Figure~\ref{fig:0}) and provide rough terrain static adaptability~\cite{kim2012optimal}. They are cheaper than, e.g., legged robots in terms of cost per unit and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
-Hardware-wise, RB5 maintains a lower sensory footprint with low-cost components, whereas 
-software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, RB5 derives its position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab}, %,campos2021orb}, 
-and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows RB5 to explore its surroundings at lower frequencies, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
+Starting from the cost advantages of LoRa communication, we develop here a low-cost approach consisting of an exploration framework based on the open-source robot operating system (ROS) middleware~\cite{quigley2009ros} and an experimental robotic platform--RB5, a mobile robot with rocker-bogie suspension--capable of exploring autonomously dynamic indoor and outdoor environments.
+Similar platforms in the literature comprise two degrees of freedom suspension with pivots~\cite{setterfield2013terrain,mann2005dynamic,faisal2021low} (see Figure~\ref{fig:0}) and provide rough terrain static adaptability~\cite{kim2012optimal}. They are cheaper than, e.g., legged robots in terms of cost per unit and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
+Although specific to RB5 in the letter, the approach is generic in terms of portability to other mobile robots with cost and computational constraints.
+%
+Hardware-wise, the approach maintains a lower sensory footprint with low-cost components, whereas 
+software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, the approach derives the robot's position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab} %,campos2021orb}, 
+and the trajectory with a novel methodology that extends exploration literature with a path following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows the robot to explore its surroundings at lower frequencies and in real-time, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
-The remainder of the letter is structured as follows. In Section~\ref{sec:fe} data show improved ``coverage per cost'' over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
-Sec.~\ref{sec:m} describe RB5 from the hardware and software standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
+The remainder of the letter is structured as follows. In Section~\ref{sec:fe}, data show %improved ``coverage per cost'' 
+the exploration performance and obstacle avoidance features 
+over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
+Sec.~\ref{sec:m} describes the approach from the software and hardware standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
 and future directions.
 
 %Utilizing the advantages of LoRa for long-range communication, we propose the mechanical design and the  
@@ -139,10 +144,25 @@ and future directions.
 \section{Related Work}
 \label{sec:rw}
 
+Literature that tackles autonomous exploration is broad and diverse~\cite{lluvia2021active,placed2022survey,julia2012comparison}, yet, most approaches use expensive sensing equipment such as LiDARs~\cite{kohlbrecher2014hector,kulkarni2022autonomous,tranzatto2022cerberus,roucek2020darpa,ebadi2020lamp,tardioli2019ground,dang2019graph,batinovic2021multi} and laser range finders~\cite{kim2022autonomous,surmann2003autonomous}. 
+Even though approaches that utilize cheaper sensors, such as RGB depth (RGB-D) cameras~\cite{tranzatto2022cerberus,kim2022autonomous,roucek2020darpa,tabib2022autonomous,ebadi2020lamp,eldemiry2022autonomous,bircher2016receding,papachristos2017uncertainty,dai2020fast}, RGB cameras~\cite{zhou2021smartphone,dang2019graph,muller2021openbot}, and sonars~\cite{zhou2021smartphone,muller2021openbot}, are studied, they often operate along other more expensive equipment~\cite{dang2019graph,ebadi2020lamp,roucek2020darpa,kim2022autonomous,tranzatto2022cerberus} or indoors only~\cite{bircher2016receding,eldemiry2022autonomous,dai2020fast,papachristos2017uncertainty,zhou2021smartphone}, and have limited autonomy~\cite{bircher2016receding,papachristos2017uncertainty,dai2020fast} or obstacle avoidance features~\cite{zhou2021smartphone,muller2021openbot}.
+Recent approaches minimize exploration costs nonetheless~\cite{muller2021openbot,zhou2021smartphone,tabib2022autonomous,eldemiry2022autonomous,bircher2016receding} by, e.g., exploiting sensing capabilities of commercial smartphones~\cite{muller2021openbot,zhou2021smartphone} or using case-specific aspects~\cite{tabib2022autonomous} but are generally unable to operate in a wide variety of challenging %indoor and outdoor
+environments.
+%
+It is such a state of practice that has prompted us to propose a low-cost approach to autonomous exploration. Similar to recent literature, it can operate on a large scale but with a lower sensory footprint--an RGB-D camera to sense the environment--and in a variety of terrains both indoors and outdoors.
+
+Software-wise, recent efforts into autonomous exploration often require expensive prior learning~\cite{shrestha2019learned} or run on multiple agents~\cite{kulkarni2022autonomous,tranzatto2022cerberus,roucek2020darpa}, whereas %general 
+approaches with little computing resources are scarce~\cite{bircher2016receding,batinovic2021multi,faisal2021low,muller2021openbot}. More traditional approaches such as these based on frontiers~\cite{kim2022autonomous,roucek2020darpa,batinovic2021multi}, graphs~\cite{kulkarni2022autonomous,tranzatto2022cerberus,dang2019graph}, grids~\cite{corah2019communication,tabib2022autonomous}, and random trees~\cite{papachristos2017uncertainty} are also studied, but mixed approaches are to be preferred~\cite{kohlbrecher2014hector,mei2006energy,shrestha2019learned,bircher2016receding,surmann2003autonomous,wenchuan2019sampling} to maximize performance and resources~\cite{placed2022survey,bircher2016receding}.
+%
+Similarly, we propose a mixed approach. A frontier-based method that exploits the scarcity of resources while still running in real-time with comparable autonomy and obstacle avoidance features to its more expensive counterparts~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}.
+
+%These approaches solve the exploration with different techniques, which are generally grouped by the exploration planning methodology. Some recent approaches study learning~\cite{}
+
+
 \section{Problem Formulation}
 \label{sec:pf}
 
-The problem considered in this work to showcase RB5 for large-scale exploration is that of exploring a bounded volume $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$. If the notation $[n]$ denotes a set with positive naturals up to $n$ and $[n]_{>0}$ with strictly positive naturals, we are interested in collision-free trajectories that explore $\mathcal{Q}$ and avoid $i\in[n]_{>0},n\in\mathbb{N}_{\geq 0}$ obstacles $\mathcal{Q}^{O_i}\subset\mathbb{R}^3$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{O_i}$ for each $i$ with a set of vertices within which the two sets are contained.
+The problem considered in this work to showcase the approach for large-scale exploration is that of exploring a bounded volume $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$. If the notation $[n]$ denotes a set with positive naturals up to $n$ and $[n]_{>0}$ with strictly positive naturals, we are interested in collision-free trajectories that explore $\mathcal{Q}$ and avoid $i\in[n]_{>0},n\in\mathbb{N}_{\geq 0}$ obstacles $\mathcal{Q}^{O_i}\subset\mathbb{R}^3$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{O_i}$ for each $i$ with a set of vertices within which the two sets are contained.
 
 \begin{pb}[Exploration]
   Consider sets of vertices $V:=\{\mathbf{v}_1,$ $\mathbf{v}_2,\dots\}$, $O_i:=\{\mathbf{o}_{i,1},\mathbf{o}_{i,2},\dots\}$ with $i\in[n],\mathbf{v}_j,\mathbf{o}_{i,k}\in\mathbb{R}^2,$ $\forall j\in[|v|],\,k\in[|o_i|]$ a point w.r.t. $\mathcal{O}_W$. Let $V$ enclose $\mathcal{Q}$, $O_i$ $\mathcal{Q}^{O_i}$ per each $i$. The \textit{exploration problem} is the problem of finding the coverage that visits each point $\mathbf{p}\in\mathcal{Q}\cap\mathcal{Q}^{O_1}\cap\mathcal{Q}^{O_2}\cap\cdots\cap\mathcal{Q}^{O_n}:=\mathcal{Q}^V$.
@@ -150,7 +170,7 @@ The problem considered in this work to showcase RB5 for large-scale exploration 
 
 Here the notation $|\cdot|$ denotes the cardinality and $\mathbb{R}$, $\mathbb{Z}$ are reals and integers. Bold notation is used for vectors.
 
-Let $\phi$ be a path function, i.e., a function RB5 tracks as it explores its surroundings in $\mathcal{Q}^V$, avoiding the obstacles $\mathcal{Q}^{O_i}$.
+Let $\phi$ be a path function, i.e., a function the robot tracks as it explores its surroundings in $\mathcal{Q}^V$, avoiding the obstacles $\mathcal{Q}^{O_i}$.
 
 \begin{defn}[Path function]\label{def:pf}
   $\phi:\mathbb{R}^2\rightarrow\mathbb{R}$ is a two-dimensional continuous and differentiable \textit{path function} of the $x$, $y$ components of $\mathbf{p}$.
@@ -162,19 +182,10 @@ Let $\phi$ be a path function, i.e., a function RB5 tracks as it explores its su
 
 The large-scale exploration framework (see Sec.~\ref{sec:le}) derives $\phi$ at each sampling step and adds it to the global ``coverage stack''. The process ends once $\mathcal{Q}^V$ is covered.
 
-\section{Methods}
+\section{Approach}
 \label{sec:m}
 
-The methods section justifies design and implementation choices for the RB5 robot in terms of both the low-cost hardware design and the software implementation for autonomous large-scale exploration in respectively Sec.~\ref{sec:md}~and~\ref{sec:le}.
-
-\subsection{Low-cost hardware design}
-\label{sec:md}
-
-The RB5 mobile robot adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{kim2012optimal,mann2005dynamic,faisal2021low} as the rocker and bogie pivot to maintain wheel contact~\cite{mann2005dynamic}.
-%
-Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear motor, whereas the rotational degrees of freedom in the rocker-bogie suspensions are passive. Since the wheels are all parallel and cannot rotate out of the plane, the robot uses the same actuation strategy as that of a differential drive vehicle to move straight and make turns by controlling the left and right sets of wheels in the same and opposite directions. Given that RB5 has multiple wheels on each side, its ability to make turns is reduced compared to a differential drive vehicle. Due to its extended body length, RB5 incorporates a caster wheel in the back to support the rear end of the frame.
-
-The robot frame's dimensions are 914 by 330 millimeters, and the robot's bounding box dimensions are 991 by 762 mm. The frame consists of one inch aluminum extrusions and acrylic sheets, and the rocker and bogie linkages are assembled from aluminum sheets and standoffs. The pivots of the bogie and rocker sit at 240 and 330 mm from the ground respectively, providing a clearance of approximately 190 mm beneath the robot frame. The two wheels on each bogie linkage are coplanar, but the wheel on the corresponding rocker linkage is closer to the medial plane of the robot. Motor control is performed by a Teensy (R) 4.0 microcontroller board sending PWM commands to six DRV8871 motor driver boards. An onboard 24 volts LiFePO${}_\text{4}$ battery provides power for the logic boards and motor drives.
+The approach section details the implementation and design choice in terms of both the software implementation for autonomous large-scale exploration and the low-cost hardware design in respectively Sec.~\ref{sec:le}~and~\ref{sec:md}.
 
 \subsection{Autonomous large-scale exploration}
 \label{sec:le}
@@ -211,11 +222,11 @@ Especially useful in the presence of diverse sensing modalities, e.g., involving
 advantages for real-world environments~\cite{placed2022survey,batinovic2021multi}. 
 %
 We propose a %one 
-mixed approach for RB5 large-scale exploration framework, combining frontier- and sampling-based methods, similar to some recent approaches~\cite{dai2020fast,wenchuan2019sampling},~\cite{dang2019graph}. % forcing latex not to split lines...
+mixed approach for our large-scale exploration framework, combining frontier- and sampling-based methods, similar to some recent approaches~\cite{dai2020fast,wenchuan2019sampling},~\cite{dang2019graph}. % forcing latex not to split lines...
 
 The framework evaluates local frontiers at each step, samples the environment, and determines feasible candidate path functions $\phi$ that intersect $\mathcal{Q}^V$ (see Definition~\ref{def:pf}).
 The next $\phi$ is selected so that the frontier is the largest, but other costs are possible (see Sec.~\ref{sec:cf}). 
-The framework then derives a path-following vector field that points to $\phi$ at any point and guides the robot utilizing the gradient descent algorithm. This allows RB5 to, e.g., follow the covering path for longer and in real-time compared to approaches that utilize frontiers only, decreasing computational and cost requirements (see Sec.~\ref{sec:fe}).
+The framework then derives a path-following vector field that points to $\phi$ at any point and guides the robot utilizing the gradient descent algorithm. This allows the robot to, e.g., follow the covering path for longer and in real-time compared to approaches that utilize frontiers only, decreasing computational and cost requirements (see Sec.~\ref{sec:fe}).
 
 To derive the path-following vector field, let the gradient of $\phi$ be defined
 \begin{equation}\small
@@ -256,7 +267,7 @@ Let thus the path-following equivalent of Eq.~(\ref{eq:vecf}) be
       \STATE $\mathcal{Q}^V_t:=O_{1,t},O_{2,t},\dots,O_{n,t},V_t\gets$ sensor readings\label{alg:vd}\vspace*{.3ex}
       \IF{$\mathcal{Q}_t^V\neq\mathcal{Q}_{t-1}^V$}\vspace*{.3ex}
         \STATE $\{\phi_{1,t},\phi_{2,t},\dots\}\gets$ $\phi$s in Def.~\ref{def:pf}, inters. $\mathcal{Q}^V\cap \Psi(\mathcal{Q}^V_t)$\label{alg:vp}\vspace*{.3ex}
-        \STATE \textbf{if} $\phi_t:=\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ \textbf{then }RB5 is stuck\label{alg:mpty}\vspace*{.3ex}
+        \STATE \textbf{if} $\phi_t:=\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ \textbf{then }the robot is stuck\label{alg:mpty}\vspace*{.3ex}
         \STATE \textbf{else}
         \STATE $\,\,\,\,\,\,\phi_t\gets \argmax_{\phi}l(\phi_t,t,\mathcal{Q}_t^V)$ in Eq.~(\ref{eq:cost})\label{alg:am}\vspace*{.3ex}
         \STATE $\,\,\,\,\,\,\langle\phi,t\rangle\gets\langle\phi,t\rangle\cup\langle\phi_t,t\rangle$ in Def.~\ref{def:co}\vspace*{.3ex}
@@ -270,7 +281,7 @@ Let thus the path-following equivalent of Eq.~(\ref{eq:vecf}) be
   \caption{Derivation of the exploration coverage $\langle\phi,t\rangle$}\label{alg}
 \end{algorithm}
 
-The path-following vector field is summarized in the pseudo-code in Algorithm~\ref{alg}, with the gradient descent in Line~\ref{alg:vf}. The vector $\varphi\in\mathbb{R}^2$ points RB5 in the direction of the path function $\phi$ with a scalar step size $\theta\in\mathbb{R}_{>0}$. The algorithm runs at the highest frequency $\mathcal{T}:=\{t_0,t_0+h,\dots\}$ with a time-step $h\in\mathbb{R}_{>0}$. Practically, there might be different $h$s at different times (see Sec.~\ref{sec:fe}). In Line~\ref{alg:cs}, the algorithm evaluates if the bounded volume $\mathcal{Q}$ is covered utilizing the covered volume $\mathcal{P}\subseteq\mathbb{R}^3$. The latter is updated in Line~\ref{alg:vp}, where the function $\Psi:\mathbb{R}^{2n}\times\mathbb{R}^2\rightarrow\mathbb{R}^{3n}\times\mathbb{R}^3$ maps the vertices to the volume. The vertices of $\mathcal{Q}^V_t$ in Line~\ref{alg:vd} are derived from sensor readings, assuming the presence of a low-cost depth camera. The framework read the camera's point cloud, clustering the obstacles $O_{1,t},O_{2,t},\dots$ by checking if the distance between consecutive points in space is within a given threshold $\varepsilon\in\mathbb{R}_{>0}$ and deriving their vertices. The vertices of the space at time instant $t$, $V_t$ are simply the limits of the sensor's field of view.
+The path-following vector field is summarized in the pseudo-code in Algorithm~\ref{alg}, with the gradient descent in Line~\ref{alg:vf}. The vector $\varphi\in\mathbb{R}^2$ points the robot in the direction of the path function $\phi$ with a scalar step size $\theta\in\mathbb{R}_{>0}$. The algorithm runs at the highest frequency $\mathcal{T}:=\{t_0,t_0+h,\dots\}$ with a time-step $h\in\mathbb{R}_{>0}$. Practically, there might be different $h$s at different times (see Sec.~\ref{sec:fe}). In Line~\ref{alg:cs}, the algorithm evaluates if the bounded volume $\mathcal{Q}$ is covered utilizing the covered volume $\mathcal{P}\subseteq\mathbb{R}^3$. The latter is updated in Line~\ref{alg:vp}, where the function $\Psi:\mathbb{R}^{2n}\times\mathbb{R}^2\rightarrow\mathbb{R}^{3n}\times\mathbb{R}^3$ maps the vertices to the volume. The vertices of $\mathcal{Q}^V_t$ in Line~\ref{alg:vd} are derived from sensor readings, assuming the presence of a low-cost depth camera. The framework read the camera's point cloud, clustering the obstacles $O_{1,t},O_{2,t},\dots$ by checking if the distance between consecutive points in space is within a given threshold $\varepsilon\in\mathbb{R}_{>0}$ and deriving their vertices. The vertices of the space at time instant $t$, $V_t$ are simply the limits of the sensor's field of view.
 
 The remaining lines %in the algorithm
 compute the feasible path functions $\{\phi_{1,t},\phi_{2,t},\dots\}$ by intersecting the space $\Psi(\mathcal{Q}^V_t)$ with possible candidate trajectories that have their final points laying at the edges of $\mathcal{Q}^V_t$, i.e., splines of the form
@@ -278,21 +289,32 @@ compute the feasible path functions $\{\phi_{1,t},\phi_{2,t},\dots\}$ by interse
   a(x-\mathbf{p}_x)^3+b(x-\mathbf{p}_x)^2+c(x-\mathbf{p}_x)+d-y=0,
 \end{equation}
 where $a,b,c\in\mathbb{R}$ are the coefficients of the spline. 
-The best trajectory is then derived via the cost $l$ in Line~\ref{alg:am}, utilizing the intersection of the largest frontier. For instance, if there are no obstacles, Eq.~(\ref{eq:spln}--\ref{eq:cost}) are such that $\phi$ is a line parallel to the direction of RB5. Formally
+The best trajectory is then derived via the cost $l$ in Line~\ref{alg:am}, utilizing the intersection of the largest frontier. For instance, if there are no obstacles, Eq.~(\ref{eq:spln}--\ref{eq:cost}) are such that $\phi$ is a line parallel to the direction of the robot. Formally
 \begin{equation}\label{eq:cost}\small
   l\hspace*{-.5ex}:=\hspace*{-.5ex}\bigl\{\lVert \mathbf{p}_1\hspace*{-.5ex}-\mathbf{p}_2\rVert\,|\,\exists\,\mathbf{p}_1,\hspace*{-.5ex}\mathbf{p}_2\hspace*{-.5ex}\in\hspace*{-.5ex}\Psi(\mathcal{Q}_t^V)\text{\hspace*{.5ex}s.t.\hspace*{.5ex}}\mathbf{p}_1\hspace*{-.5ex}\neq\hspace*{-.5ex}\mathbf{p}_2,\phi(\mathbf{p}_1-\mathbf{p}_2)\hspace*{-.5ex}\approx\hspace*{-.5ex}0\bigr\},
 \end{equation}
 where the condition $\phi(\mathbf{p}_1-\mathbf{p}_2)$ is evaluated on a given $\varepsilon\in\mathbb{R}_{>0}$, i.e., $|\phi(\mathbf{p}_1-\mathbf{p}_2)|<\varepsilon$.
 
-Using the algorithm, the framework provides a way to explore space $\mathcal{Q}$ and avoid obstacles $\mathcal{Q}^{O_i}$. There are configurations at which there are no feasible trajectories nonetheless, e.g., if $\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ in Line~\ref{alg:mpty}. In this scenario, the framework allows a human to intervene via standard wireless and LoRa communication technology. RB5 can then be teleoperated on long distances--studies from the internet-of-things domain~\cite{shanmuga2020survey,raza2017lora} report a range of up to five kilometers in an urban setting--and with a relatively inexpensive hardware equipment (two LoRa bundles). The framework we propose utilizes a web interface to parse human commands into our custom communication protocol which utilizes the LoRa physical layer's payload to transfer $\varphi$'s $x$ and $y$ components.
+Using the algorithm, the framework provides a way to explore space $\mathcal{Q}$ and avoid obstacles $\mathcal{Q}^{O_i}$. There are configurations at which there are no feasible trajectories nonetheless, e.g., if $\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ in Line~\ref{alg:mpty}. In this scenario, the framework allows a human to intervene via standard wireless and LoRa communication technology. The robot can then be teleoperated on long distances--studies from the internet-of-things domain~\cite{shanmuga2020survey,raza2017lora} report a range of up to five kilometers in an urban setting--and with a relatively inexpensive hardware equipment (two LoRa bundles). The framework we propose utilizes a web interface to parse human commands into our custom communication protocol which utilizes the LoRa physical layer's payload to transfer $\varphi$'s $x$ and $y$ components.
 
-The algorithm is illustrated in Fig.~\ref{fig:3}. At each iteration, RB5 samples the environment and derives a set of possible candidate trajectories $\{\phi_{1,t},\phi_{2,t},\dots\}$. If there is no obstacle ahead, the optimal trajectory per iteration $\phi_t$ is a line parallel to RB5's direction of travel (see Fig.~\ref{fig:3-3}). If there are obstacles, the framework selects the trajectory via the cost $l$, $\phi_t$, which goes through the middle of the largest frontier (see Fig.~\ref{fig:3-1}~and~\ref{fig:3-2} for respective obstacles ``wheel'' and ``wall'').
+The algorithm is illustrated in Fig.~\ref{fig:3}. At each iteration, the robot samples the environment and derives a set of possible candidate trajectories $\{\phi_{1,t},\phi_{2,t},\dots\}$. If there is no obstacle ahead, the optimal trajectory per iteration $\phi_t$ is a line parallel to the robot's direction of travel (see Fig.~\ref{fig:3-3}). If there are obstacles, the framework selects the trajectory via the cost $l$, $\phi_t$, which goes through the middle of the largest frontier (see Fig.~\ref{fig:3-1}~and~\ref{fig:3-2} for respective obstacles ``wheel'' and ``wall'').
 
-To derive a map of the environment and to keep the track of RB5 within it in Line~\ref{alg:vf}, the framework uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. RB5's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs} and to asses exploration-to-cost (see Fig.~\ref{}), showing that the algorithm is effective in exploring unknown environments with a lower sensory footprint (see Sec.~\ref{sec:fe}). Furthermore, earlier iteration of the work exploited a different SLAM algorithm from the visual SLAM community~\cite{campos2021orb}, showing that some of the framework components are interchangeable.
+To derive a map of the environment and to keep the track of the robot within it in Line~\ref{alg:vf}, the framework uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. The robot's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs}% and to asses exploration-to-cost (see Fig.~\ref{})
+, showing that the algorithm is effective in exploring unknown environments with a lower sensory footprint (see Sec.~\ref{sec:fe}). Furthermore, earlier iteration of the work exploited a different SLAM algorithm from the visual SLAM community~\cite{campos2021orb}, showing that some of the framework components are interchangeable.
 
 The framework %we propose 
 is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2~\cite{quigley2009ros} package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa protocols. The package further implements the serial communication with the microcontroller implemented in Arduino and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D sensor (an Intel (R) RealSense (TM) Depth Camera~\cite{keselman2017intel} D435) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
 Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 and ROS respectively, whereas ``base station'' is in PHP and JavaScript.
+
+\subsection{Low-cost hardware design}
+\label{sec:md}
+
+The RB5 mobile robot adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{kim2012optimal,mann2005dynamic,faisal2021low} as the rocker and bogie pivot to maintain wheel contact~\cite{mann2005dynamic}.
+%
+Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear motor, whereas the rotational degrees of freedom in the rocker-bogie suspensions are passive. Since the wheels are all parallel and cannot rotate out of the plane, the robot uses the same actuation strategy as that of a differential drive vehicle to move straight and make turns by controlling the left and right sets of wheels in the same and opposite directions. Given that RB5 has multiple wheels on each side, its ability to make turns is reduced compared to a differential drive vehicle. Due to its extended body length, RB5 incorporates a caster wheel in the back to support the rear end of the frame.
+
+The robot frame's dimensions are 914 by 330 millimeters, and the robot's bounding box dimensions are 991 by 762 mm. The frame consists of one inch aluminum extrusions and acrylic sheets, and the rocker and bogie linkages are assembled from aluminum sheets and standoffs. The pivots of the bogie and rocker sit at 240 and 330 mm from the ground respectively, providing a clearance of approximately 190 mm beneath the robot frame. The two wheels on each bogie linkage are coplanar, but the wheel on the corresponding rocker linkage is closer to the medial plane of the robot. Motor control is performed by a Teensy (R) 4.0 microcontroller board sending PWM commands to six DRV8871 motor driver boards. An onboard 24 volts LiFePO${}_\text{4}$ battery provides power for the logic boards and motor drives.
+
 
 \section{Field Experiments}
 \label{sec:fe}
@@ -943,6 +965,10 @@ The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see
 %Use $\backslash${\tt{begin\{IEEEbiographynophoto\}}} and the author name as the argument followed by the biography text.
 %\end{IEEEbiographynophoto}
 
+\newpage
+~~
+
+\newpage
 
 {\small\bibliographystyle{IEEEtran}  %
 %\bibliography{../../books/phd-thesis/backmatter/references}}
