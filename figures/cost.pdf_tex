@@ -1,0 +1,93 @@
+%% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figures/cost.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{157.5bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.78095238)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/cost.pdf}}%
+    \put(0.25366667,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 0\end{tabular}}}}%
+    \put(0.25666667,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 0\end{tabular}}}}%
+    \put(0.39557143,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 2\end{tabular}}}}%
+    \put(0.39857143,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 2\end{tabular}}}}%
+    \put(0.53747619,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 4\end{tabular}}}}%
+    \put(0.54047619,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 4\end{tabular}}}}%
+    \put(0.67938095,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 6\end{tabular}}}}%
+    \put(0.68238095,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 6\end{tabular}}}}%
+    \put(0.82128571,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 8\end{tabular}}}}%
+    \put(0.82428571,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 8\end{tabular}}}}%
+    \put(0.430451,0.06066143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} autonomy (h)\end{tabular}}}}%
+    \put(0.433451,0.06366143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} autonomy (h)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/cost.pdf}}%
+    \put(0.10795238,0.14461905){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 10${^\text{2}}$\end{tabular}}}}%
+    \put(0.11095238,0.14761905){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 10${^\text{2}}$\end{tabular}}}}%
+    \put(0.10795238,0.40652381){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 10${^\text{3}}$\end{tabular}}}}%
+    \put(0.11095238,0.40952381){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 10${^\text{3}}$\end{tabular}}}}%
+    \put(0.11095238,0.67619048){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 10${^\text{4}}$\end{tabular}}}}%
+    \put(0.09084267,0.21792801){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} normalized cost (\end{tabular}}}}}%
+    \put(0.09384267,0.22092801){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} normalized cost ({\color{black}usd/h)}\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/cost.pdf}}%
+    \put(0.28011053,0.51018475){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{schmid2020efficient}\end{tabular}}}}%
+    \put(0.23906035,0.60770721){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{kulkarni2022autonomous}\end{tabular}}}}%
+    \put(0.24472076,0.35975174){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{muller2021openbot}\end{tabular}}}}%
+    \put(0.35824035,0.58607162){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{tranzatto2022cerberus}\end{tabular}}}}%
+    \put(0.44088886,0.42239302){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{roucek2020darpa}\end{tabular}}}}%
+    \put(0.66070119,0.29013593){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{surmann2003autonomous}\end{tabular}}}}%
+    \put(0.7634399,0.21578286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Ours\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/cost.pdf}}%
+    \put(0.70599895,0.63346537){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny aerial\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/cost.pdf}}%
+    \put(0.68899895,0.58609796){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny legged\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/cost.pdf}}%
+    \put(0.66299895,0.53694626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny wheeled\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/cost.pdf}}%
+  \end{picture}%
+\endgroup%
