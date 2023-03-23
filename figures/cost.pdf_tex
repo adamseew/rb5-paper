@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'figures/cost.pdf' (pdf, eps, ps)
+%% Accompanies image file 'figures/cost2.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,20 +53,20 @@
   \begin{picture}(1,0.78095238)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/cost.pdf}}%
-    \put(0.25366667,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 0\end{tabular}}}}%
-    \put(0.25666667,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 0\end{tabular}}}}%
-    \put(0.39557143,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 2\end{tabular}}}}%
-    \put(0.39857143,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 2\end{tabular}}}}%
-    \put(0.53747619,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 4\end{tabular}}}}%
-    \put(0.54047619,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 4\end{tabular}}}}%
-    \put(0.67938095,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 6\end{tabular}}}}%
-    \put(0.68238095,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 6\end{tabular}}}}%
-    \put(0.82128571,0.09855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 8\end{tabular}}}}%
-    \put(0.82428571,0.10155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 8\end{tabular}}}}%
-    \put(0.430451,0.06066143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} autonomy (h)\end{tabular}}}}%
-    \put(0.433451,0.06366143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} autonomy (h)\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/cost.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/cost2.pdf}}%
+    \put(0.24366667,0.08855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 0\end{tabular}}}}%
+    \put(0.24666667,0.09155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 0\end{tabular}}}}%
+    \put(0.38557143,0.08855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 2\end{tabular}}}}%
+    \put(0.38857143,0.09155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 2\end{tabular}}}}%
+    \put(0.52747619,0.08855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 4\end{tabular}}}}%
+    \put(0.53047619,0.09155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 4\end{tabular}}}}%
+    \put(0.66938095,0.08855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 6\end{tabular}}}}%
+    \put(0.67238095,0.09155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 6\end{tabular}}}}%
+    \put(0.81128571,0.08855571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 8\end{tabular}}}}%
+    \put(0.81428571,0.09155571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 8\end{tabular}}}}%
+    \put(0.420451,0.05066143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} autonomy (h)\end{tabular}}}}%
+    \put(0.423451,0.05366143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} autonomy (h)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/cost2.pdf}}%
     \put(0.10795238,0.14461905){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 10${^\text{2}}$\end{tabular}}}}%
     \put(0.11095238,0.14761905){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} 10${^\text{2}}$\end{tabular}}}}%
     \put(0.10795238,0.40652381){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} 10${^\text{3}}$\end{tabular}}}}%
@@ -74,20 +74,25 @@
     \put(0.11095238,0.67619048){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 10${^\text{4}}$\end{tabular}}}}%
     \put(0.09084267,0.21792801){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{black} normalized cost (\end{tabular}}}}}%
     \put(0.09384267,0.22092801){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{white} normalized cost ({\color{black}usd/h)}\end{tabular}}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/cost.pdf}}%
-    \put(0.28011053,0.51018475){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{schmid2020efficient}\end{tabular}}}}%
-    \put(0.23906035,0.60770721){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{kulkarni2022autonomous}\end{tabular}}}}%
-    \put(0.24472076,0.35975174){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{muller2021openbot}\end{tabular}}}}%
-    \put(0.35824035,0.58607162){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{tranzatto2022cerberus}\end{tabular}}}}%
-    \put(0.44088886,0.42239302){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{roucek2020darpa}\end{tabular}}}}%
-    \put(0.66070119,0.29013593){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{surmann2003autonomous}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/cost2.pdf}}%
+
+    \put(0.27711053,0.48718475){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{gray} {\hypersetup{allcolors=gray}\cite{schmid2020efficient}}\end{tabular}}}}%
+    \put(0.28011053,0.49018475){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{schmid2020efficient}\end{tabular}}}}%
+    \put(0.20606035,0.60470721){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{gray} {\hypersetup{allcolors=gray}\cite{kulkarni2022autonomous}}\end{tabular}}}}%
+    \put(0.20906035,0.60770721){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{kulkarni2022autonomous}\end{tabular}}}}%
+    \put(0.21172076,0.35675174){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{gray} {\hypersetup{allcolors=gray}\cite{muller2021openbot}}\end{tabular}}}}%
+    \put(0.21472076,0.35975174){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{muller2021openbot}\end{tabular}}}}%
+    \put(0.39524035,0.58307162){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{gray} {\hypersetup{allcolors=gray}\cite{tranzatto2022cerberus}}\end{tabular}}}}%
+    \put(0.39824035,0.58607162){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{tranzatto2022cerberus}\end{tabular}}}}%
+    \put(0.43788886,0.39939302){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{gray} {\hypersetup{allcolors=gray}\cite{roucek2020darpa}}\end{tabular}}}}%
+    \put(0.44088886,0.40239302){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{roucek2020darpa}\end{tabular}}}}%
+    \put(0.74770119,0.33713593){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{gray} {\hypersetup{allcolors=gray}\cite{surmann2003autonomous}}\end{tabular}}}}%
+    \put(0.75070119,0.34013593){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize \cite{surmann2003autonomous}\end{tabular}}}}%
     \put(0.7634399,0.21578286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Ours\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/cost.pdf}}%
-    \put(0.70599895,0.63346537){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny aerial\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/cost.pdf}}%
-    \put(0.68899895,0.58609796){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny legged\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/cost.pdf}}%
-    \put(0.66299895,0.53694626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny wheeled\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/cost.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/cost2.pdf}}%
+    \put(0.72599895,0.62946537){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny aerial\end{tabular}}}}% e
+    \put(0.70899895,0.59109796){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny legged\end{tabular}}}}%
+    \put(0.55299895,0.55294626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny legged and aerial\end{tabular}}}}%
+    \put(0.68299895,0.51694626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny wheeled\end{tabular}}}}%
   \end{picture}%
 \endgroup%

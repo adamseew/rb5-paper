@@ -108,7 +108,7 @@ Article submission, IEEE, IEEEtran, journal, \LaTeX, paper, template, typesettin
 
 \vspace*{-.4cm}
 \section{Introduction}
-
+\input{rb5-paper-biborder.tex}
 \begin{figure}
   \vspace*{-2cm}
   \hspace*{-.2cm}
@@ -356,19 +356,19 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
 
 \begin{figure}[t]
   \vspace*{-.6cm}
-  \begin{minipage}[t]{0.55\columnwidth}
-    \hspace*{-.4cm}
+  \begin{minipage}[t]{0.57\columnwidth}
+    \hspace*{-.5cm}
     \input{figures/auton.pdf_tex}
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.44\columnwidth}
+  \begin{minipage}[t]{0.42\columnwidth}
     \vspace*{-5.1cm}
     \centering
     \caption{Autonomy is reported in hours between the time the battery is fully charged to discharged for ours against other approaches tackling autonomous exploration. 
-    Usually, approaches that use aerial~\cite{schmid2020efficient,kulkarni2022autonomous} and wheeled~\cite{muller2021openbot,roucek2020darpa,surmann2003autonomous} robots report respectively lowest and highest autonomy, whereas those that use legged~\cite{kulkarni2022autonomous,tranzatto2022cerberus} robots are between the two groups. Here~\cite{muller2021openbot} is an outlier as it uses a small wheeled robot. We have conducted multiple trials under varying ~grounds ~and ~velocities. ~The}
+    Usually, approaches that use aerial~\cite{schmid2020efficient,kulkarni2022autonomous} and wheeled~\cite{muller2021openbot,roucek2020darpa,surmann2003autonomous} robots report respectively lowest and highest autonomy, whereas those that use legged~\cite{kulkarni2022autonomous,tranzatto2022cerberus} robots are between the two groups. Here~\cite{muller2021openbot} is an outlier as it uses a small wheeled robot. We have conducted multiple trials under varying ~grounds ~and ~velocities.}
     \label{fig}
   \end{minipage}
   \vspace*{-.68cm}
-  \caption*{minimum and maximum are approximately four hours and twenty minutes and sixteen hours and a half when the robot respectively moves at full speed and is not moving. The first quartile is six hours and ten minutes, third is nine hours. The median is then eight hours and twenty minutes when the average velocity is two-thirds of maximum.}
+  \caption*{The minimum and maximum are approximately four hours and twenty minutes and sixteen hours and a half when the robot respectively moves at full speed and is not moving (red outlier). The first quartile is six hours and ten minutes, the third is nine hours. The median is then eight hours and twenty minutes when the average velocity is two-thirds of the maximum.}
   \vspace*{-.5cm}
 \end{figure}
 
