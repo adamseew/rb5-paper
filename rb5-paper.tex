@@ -106,25 +106,26 @@ Article submission, IEEE, IEEEtran, journal, \LaTeX, paper, template, typesettin
 %for IEEE journal papers produced under \LaTeX\ using
 %IEEEtran.cls version 1.8b and later. The most common elements are covered in the simplified and updated instructions in ``New\_IEEEtran\_how-to.pdf''. For less common elements you can refer back to the original ``IEEEtran\_HOWTO.pdf''. It is assumed that the reader has a basic working knowledge of \LaTeX. Those who are new to \LaTeX \ are encouraged to read Tobias Oetiker's ``The Not So Short Introduction to \LaTeX ,'' available at: \url{http://tug.ctan.org/info/lshort/english/lshort.pdf} which provides an overview of working with \LaTeX.
 
-\vspace*{-.4cm}
+\vspace*{-.3cm}
 \section{Introduction}
 \input{rb5-paper-biborder.tex}
 \begin{figure}
-  \vspace*{-2cm}
-  \hspace*{-.2cm}
-  \begin{tikzpicture}
-    \node (a) at (0,0)
-      {
-        \input{figures/_rb5_abstract.pdf_tex} 
-      };
-     \node (b) at (a.north) [anchor=north,xshift=2.22cm,yshift=1.36cm]
-      {
-        \input{figures/cost.pdf_tex} 
-      };
- \end{tikzpicture}
-  \caption{A robot needs to explore its surroundings with a lower sensory footprint% compared to state-of-the-art approaches
-  --the picture illustrates an experimental robotic platform that carries an RGB-D camera and a low-power computing hardware to derive an exploratory coverage path on a large-scale, for long-term, and in both indoor and outdoor challenging terrains. Top-right is the comparison with representative state-of-the-art approaches in terms of autonomy and sensors' normalized costs.}
-  \vspace*{-.6cm}
+  \vspace*{-.5cm}
+ %\begin{tikzpicture}
+   %\node (a) at (0,0)
+   %{
+      \input{figures/_rb5_abstract.pdf_tex} 
+   %};
+   %\node (b) at (a.north) [anchor=north,xshift=2.22cm,yshift=1.36cm]
+   %{
+   %  \input{figures/cost.pdf_tex} 
+   %};
+ %\end{tikzpicture}
+  \caption{A robot needs to explore its surroundings with a lower sensory foot- print% compared to state-of-the-art approaches
+  --the picture illustrates an experimental robotic platform that carries an RGB-D camera and a low-power computing hardware to derive an exploratory coverage path on a large-scale, for long-term, and %in both indoors and outdoors. 
+  on challenging terrains.% Top-right is the comparison with representative state-of-the-art approaches in terms of autonomy and sensors' normalized costs.
+  }
+  \vspace*{-.4cm}
   \label{fig:0}
 \end{figure}
 
@@ -223,6 +224,7 @@ the software for autonomous large-scale exploration and the low-cost hardware in
 \label{sec:le}
 
 \begin{figure*}
+  \vspace*{-.3cm}
   \begin{subfigure}[m]{0.33\textwidth}
     \centering
     \input{figures/_GOPR0984.pdf_tex}
@@ -248,6 +250,7 @@ the software for autonomous large-scale exploration and the low-cost hardware in
   approach consists of the robot sampling the environment and searching for obstacles and unexplored areas. The %framework
   approach clusters the two groups into vertices sets and builds candidate path functions. From these, it selects the optimal trajectory w.r.t. a given cost and iterates the operation at each step. In between the iterations, it tracks the trajectory, saving computational and sensing resources.}
   \label{fig:3}
+  \vspace*{-.3cm}
 \end{figure*}
 
 There is a large body of work for robot exploration~\cite{lavalle2006planning,yamauchi1997frontier,placed2022survey,dang2019graph,julia2012comparison}. 
