@@ -71,9 +71,9 @@
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/auton2.pdf}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/auton2.pdf}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/auton2.pdf}}%
-    \put(0.59599895,0.85946537){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny aerial\end{tabular}}}}% e
+    \put(0.55299895,0.85946537){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny wheeled\end{tabular}}}}% e
     \put(0.57899895,0.82109796){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny legged\end{tabular}}}}%
     \put(0.42299895,0.78294626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny legged and aerial\end{tabular}}}}%
-    \put(0.55299895,0.74694626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny wheeled\end{tabular}}}}%
+    \put(0.59599895,0.74694626){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\notsotiny aerial\end{tabular}}}}%
   \end{picture}%
 \endgroup%
