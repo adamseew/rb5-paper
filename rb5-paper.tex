@@ -1,4 +1,5 @@
 \documentclass[lettersize,journal]{IEEEtran}
+\usepackage[inline]{enumitem}
 \usepackage{amsmath,amsfonts}
 \usepackage{amssymb}
 \usepackage{algorithmic}
@@ -175,7 +176,12 @@ Hardware-wise, the approach maintains a lower sensory footprint with low-cost co
 software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, the approach derives the robot's position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab} %,campos2021orb}, 
 and the trajectory with a novel methodology that extends exploration literature with a path-following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows the robot to explore its surroundings at lower frequencies and in real-time, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
-The main \textbf{contribution} of this letter is an \textit{approach for autonomous exploration} which extends existing literature to mobile robots \textit{with fewer and cheaper sensors and} works \textit{for long-term exploiting energy-efficient design and low-power communication}.
+The main \textbf{contribution} of this letter is
+\begin{enumerate*}[label={(\alph*)},font={\textit}]
+\item an approach for \textit{long-term autonomous exploration} that exploits \textit{energy-efficient design} and \textit{low-power communication},
+\item and extends existing literature to \textit{mobile robots with fewer and cheaper sensors}.
+\end{enumerate*}
+%an \textit{approach for autonomous exploration} which extends existing literature to mobile robots \textit{with fewer and cheaper sensors and} works \textit{for long-term exploiting energy-efficient design and low-power communication}.
 In particular, in %In 
 Section~\ref{sec:fe}, data show %improved ``coverage per cost'' 
 the exploration performance and obstacle avoidance features 
@@ -382,7 +388,7 @@ is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\f
 Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 and ROS respectively, whereas ``base station'' is in PHP and JavaScript.
 
 \begin{figure}[t]
-  \vspace*{-.6cm}
+  \vspace*{-.5cm}
   \begin{minipage}[t]{0.57\columnwidth}
     \hspace*{-.5cm}
     \input{figures/auton.pdf_tex}
@@ -396,7 +402,7 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
   \end{minipage}
   \vspace*{-.68cm}
   \caption*{The minimum and maximum are approximately four hours and twenty minutes and sixteen hours and a half when the robot respectively moves at full speed and is not moving (red outlier). The first quartile is six hours and ten minutes, the third is nine hours. The median is then eight hours and twenty minutes when the average velocity is two-thirds of the maximum.}
-  %\vspace*{-.5cm}
+  \vspace*{-.3cm}
 \end{figure}
 
 \subsection{Low-cost hardware design}
@@ -412,7 +418,7 @@ In Fig.~\ref{fig}, the autonomy is reported in hours between the time the batter
 Cost-wise, our approach requires an RGB-D camera for exploration. The approach closest in terms of autonomy~\cite{surmann2003autonomous} to ours is already more expensive, requiring a laser range finder. Others require a multitude of LiDARs and RGB-D cameras~\cite{tranzatto2022cerberus,kulkarni2022autonomous,roucek2020darpa}, and/or do not operate for long-term~\cite{schmid2020efficient,muller2021openbot}.
 
 \begin{figure*}[b]
-  \vspace*{-.3cm}
+  \vspace*{-.1cm}
   \begin{subfigure}[m]{0.48\textwidth}
     \centering
     \hspace*{-1.2cm}
@@ -493,7 +499,8 @@ The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see
 \label{sec:cf}
 
 The content of this letter consists of an %framework 
-approach and an experimental robotic platform for low-cost autonomous exploration in both indoor and outdoor challenging environments. While comparable with other literature tackling autonomous exploration~\cite{lluvia2021active,placed2022survey,julia2012comparison}, the approach extends the state-of-the-art further to operate in the presence of fewer sensory and computing requirements. Requiring an RGB-D camera only, all the exploration is computed in real-time on a low-power computing hardware which is cheaper compared to the existing literature operating in similar settings~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}. 
+approach %and an experimental robotic platform 
+for low-cost autonomous exploration in both indoor and outdoor challenging environments. While comparable with other literature tackling autonomous exploration~\cite{lluvia2021active,placed2022survey,julia2012comparison}, the approach extends the state-of-the-art further to operate in the presence of fewer sensory and computing requirements. Requiring an RGB-D camera only, all the exploration is computed in real-time on a low-power computing hardware which is cheaper compared to the existing literature operating in similar settings~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}. 
 
 The exploration is based on a novel mixed approach--a frontier- and sampling-based method from the literature extended with a path-following vector field~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis} from the aerial robotics domain--which allows the robot to operate at lower frequencies and in real-time. 
 Human intervention, if required, is implemented via a novel methodology based on the LoRa low-power long-range communication technology~\cite{shanmuga2020survey} from the internet-of-things domain. The position is from a state-of-the-art SLAM algorithm~\cite{labbe2019rtab}.
