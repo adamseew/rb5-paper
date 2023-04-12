@@ -1,4 +1,4 @@
-\documentclass[lettersize,journal]{IEEEtran}
+\documentclass[lettersize,journal,twoside]{IEEEtran} 
 \usepackage[inline]{enumitem}
 \usepackage{amsmath,amsfonts}
 \usepackage{amssymb}
@@ -69,20 +69,26 @@
 \title{A Low-Cost Energy-Efficient Approach for Long-Term %Large-Scale 
 Autonomous Exploration}%, 3D~Reconstruction, and Mapping}
 
-\author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$, Hector Castillo${}^\text{1}$, Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
+\author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$, Hector Castillo${}^\text{1}$, A.~Michael West${}^\text{3}$, Victoria Ereskina${}^\text{4}$, Beau Birdsall${}^\text{4}$, Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
         % <-this % stops a space
-  \thanks{Manuscript received: Month, Day, Year; Revised Month, Day, Year; Accepted Month, Day, Year.}%Use only for final RAL version
-  \thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments.} %Use only for final RAL version
+  %\thanks{Manuscript received: Month, Day, Year; Revised Month, Day, Year; Accepted Month, Day, Year.}%Use only for final RAL version
+  %\thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments.} %Use only for final RAL version
   \thanks{${}^\text{1}$A.\hspace*{.4ex}S., C.\hspace*{.4ex}M., S.\hspace*{.4ex}N., O.\hspace*{.4ex}F., H.\hspace*{.4ex}C, I.\hspace*{.4ex}A., and A.\hspace*{.4ex}M.\hspace*{.4ex}D. are with the Department of Mechanical Engineering and Materials Science, Yale University, CT, USA. Email: {\tt\footnotesize \href{mailto:adam.seewald@yale.edu}{adam.seewald@yale.edu};}}
   \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}C. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA.}
-  \thanks{Digital Object Identifier (DOI): see top of this page.}
+  \thanks{${}^\text{3}$A.\hspace*{.4ex}M.\hspace*{.4ex}W. is with the Department of Mechanical Engineering, Massachusetts Institute of Technology, MA, USA.}
+  \thanks{${}^\text{4}$V.\hspace*{.4ex}E. and B.\hspace*{.4ex}B. are currently unaffiliated. C.\hspace*{.4ex}M.\hspace*{.4ex}C., A.\hspace*{.4ex}M.\hspace*{.4ex}W., V.\hspace*{.4ex}E., and B.\hspace*{.4ex}B. performed the work while affiliated with Yale University.}
+  %\thanks{Digital Object Identifier (DOI): see top of this page.}
 }
 
 % The paper headers
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2021}%
-{Shell \MakeLowercase{\textit{et al.}}: A Sample Article Using IEEEtran.cls for IEEE Journals}
+\markboth{%Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2021
+%Manuscript~submitted~for~publication. Version~\textnumero~1, April~2023
+Manuscript in preparation. April~2023
+}%
+{Seewald \MakeLowercase{\textit{et al.}}: A Low-Cost Approach for Long-Term Exploration}
 
-\IEEEpubid{0000--0000/00\$00.00~\copyright~2021 IEEE}
+\IEEEpubid{%0000--0000/00\$00.00~\copyright~2023 IEEE
+}
 % Remember, if you use this you must call \IEEEpubidadjcol in the second
 % column for its text to clear the IEEEpubid mark.
 
@@ -106,7 +112,7 @@ approaches with indoor and outdoor experiments.
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{IEEEkeywords}
-Article submission, IEEE, IEEEtran, journal, \LaTeX, paper, template, typesetting.
+Motion and Path Planning; Energy and Environ- ment-Aware Automation.
 \end{IEEEkeywords}
 
 %\section{Introduction}
