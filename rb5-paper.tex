@@ -10,7 +10,7 @@
 \usepackage{stfloats}
 \usepackage{url}
 \usepackage{verbatim}
-%\usepackage{graphicx}
+\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage[font=footnotesize]{caption}
 \usepackage[font=footnotesize]{subcaption}
@@ -36,6 +36,18 @@
 
 \usepackage{textpos}
 \usepackage{amsthm}
+\usepackage{xcolor}
+\colorlet{RED}{red}
+
+\usepackage{tikz}
+\usepackage[scaled]{helvet}
+
+\AddToHook{shipout/foreground}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[red,rotate=45,scale=10,opacity=0.2] at (current page.center) {\small\fontfamily{phv}\selectfont IN~PREPARATION};
+    %UNDER~REVIEW};   
+  \end{tikzpicture}
+}
 
 %% correct bad hyphenation here
 \hyphenation{obs-tacles sur-roundings}
@@ -69,21 +81,23 @@
 \title{A Low-Cost Energy-Efficient Approach for Long-Term %Large-Scale 
 Autonomous Exploration}%, 3D~Reconstruction, and Mapping}
 
-\author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$, Hector Castillo${}^\text{1}$, A.~Michael West${}^\text{3}$, Victoria Ereskina${}^\text{4}$, Beau Birdsall${}^\text{4}$, Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
+\author{Adam Seewald${}^\text{1}$, Marvin Chanc{\'a}n${}^\text{1}$, Connor M. McCann${}^\text{2}$, Seonghoon Noh${}^\text{1}$, Omeed Fallahi${}^\text{1}$, Hector Castillo${}^\text{1}$, %A.~Michael West${}^\text{3}$, Victoria Ereskina${}^\text{4}$, Beau Birdsall${}^\text{4}$, 
+Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staff,~IEEE,}
         % <-this % stops a space
   %\thanks{Manuscript received: Month, Day, Year; Revised Month, Day, Year; Accepted Month, Day, Year.}%Use only for final RAL version
   %\thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments.} %Use only for final RAL version
   \thanks{${}^\text{1}$A.\hspace*{.4ex}S., C.\hspace*{.4ex}M., S.\hspace*{.4ex}N., O.\hspace*{.4ex}F., H.\hspace*{.4ex}C, I.\hspace*{.4ex}A., and A.\hspace*{.4ex}M.\hspace*{.4ex}D. are with the Department of Mechanical Engineering and Materials Science, Yale University, CT, USA. Email: {\tt\footnotesize \href{mailto:adam.seewald@yale.edu}{adam.seewald@yale.edu};}}
-  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}C. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA.}
-  \thanks{${}^\text{3}$A.\hspace*{.4ex}M.\hspace*{.4ex}W. is with the Department of Mechanical Engineering, Massachusetts Institute of Technology, MA, USA.}
-  \thanks{${}^\text{4}$V.\hspace*{.4ex}E. and B.\hspace*{.4ex}B. are currently unaffiliated. C.\hspace*{.4ex}M.\hspace*{.4ex}C., A.\hspace*{.4ex}M.\hspace*{.4ex}W., V.\hspace*{.4ex}E., and B.\hspace*{.4ex}B. performed the work while affiliated with Yale University.}
+  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}C. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA, but the work was performed while affiliated with Yale.}
+  %\thanks{${}^\text{3}$A.\hspace*{.4ex}M.\hspace*{.4ex}W. is with the Department of Mechanical Engineering, Massachusetts Institute of Technology, MA, USA;}
+  %\thanks{${}^\text{4}$V.\hspace*{.4ex}E. and B.\hspace*{.4ex}B. are currently unaffiliated. ${}^\text{2, 3, 4}$C.\hspace*{.4ex}M.\hspace*{.4ex}C., A.\hspace*{.4ex}M.\hspace*{.4ex}W., V.\hspace*{.4ex}E., and B.\hspace*{.4ex}B. performed the work while affiliated with Yale University.}
   %\thanks{Digital Object Identifier (DOI): see top of this page.}
 }
 
 % The paper headers
 \markboth{%Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2021
 %Manuscript~submitted~for~publication. Version~\textnumero~1, April~2023
-Manuscript in preparation. April~2023
+Manuscript in preparation. %\underline{Not for distribution}. 
+May~2023
 }%
 {Seewald \MakeLowercase{\textit{et al.}}: A Low-Cost Approach for Long-Term Exploration}
 
@@ -201,7 +215,7 @@ and future directions.
 %\vspace*{-.4cm}
 \section{Related Work}
 \label{sec:rw}
-
+\noindent
 Literature that tackles autonomous exploration is broad and diverse~\cite{lluvia2021active,placed2022survey,julia2012comparison}, yet, most approaches use expensive sensing equipment such as LiDARs~\cite{kohlbrecher2014hector,kulkarni2022autonomous,tranzatto2022cerberus,roucek2020darpa,ebadi2020lamp,tardioli2019ground,dang2019graph,batinovic2021multi} and laser range finders~\cite{kim2022autonomous,surmann2003autonomous}. 
 Even though approaches that utilize cheaper sensors, such as RGB depth (RGB-D) cameras~\cite{tranzatto2022cerberus,kim2022autonomous,roucek2020darpa,tabib2022autonomous,ebadi2020lamp,eldemiry2022autonomous,bircher2016receding,papachristos2017uncertainty,dai2020fast}, RGB cameras~\cite{zhou2021smartphone,dang2019graph,muller2021openbot}, and sonars~\cite{zhou2021smartphone,muller2021openbot}, are studied, they often operate along other more expensive equipment~\cite{dang2019graph,ebadi2020lamp,roucek2020darpa,kim2022autonomous,tranzatto2022cerberus} or indoors only~\cite{bircher2016receding,eldemiry2022autonomous,dai2020fast,papachristos2017uncertainty,zhou2021smartphone}, and have limited autonomy~\cite{bircher2016receding,papachristos2017uncertainty,dai2020fast} or obstacle avoidance features~\cite{zhou2021smartphone,muller2021openbot}.
 Recent approaches minimize exploration costs nonetheless~\cite{muller2021openbot,zhou2021smartphone,tabib2022autonomous,eldemiry2022autonomous,bircher2016receding} by, e.g., exploiting sensing capabilities of commercial smartphones~\cite{muller2021openbot,zhou2021smartphone} or using case-specific aspects~\cite{tabib2022autonomous} but are generally unable to operate in a wide variety of challenging %indoor and outdoor
@@ -219,7 +233,7 @@ Similarly, we propose a mixed approach. A frontier- and sampling-based method th
 %\vspace*{-.3cm}
 \section{Problem Description}
 \label{sec:pf}
-
+\noindent
 The problem considered in this work to showcase the approach for long-term %large-scale 
 exploration is that of exploring a bounded volume $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$. If the notation $[n]$ denotes a set of positive naturals up to $n\in\mathbb{N}_{>0}$ and $[n]_{>0}$ of strictly positive naturals, we are interested in collision-free trajectories that explore $\mathcal{Q}$ and avoid $n$ obstacles $\mathcal{Q}^{O_i}\subset\mathbb{R}^3,i\in[n]_{>0}$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{O_i}$ for each $i$ with a set of vertices within which the two sets are contained.
 
@@ -248,7 +262,7 @@ exploration approach %framework
 %%%%%%%%%%%%%%%%%%
 \section{Approach}
 \label{sec:m}
-
+\noindent
 The approach section details the implementation and design choices in terms of %both 
 the software for autonomous long-term %large-scale 
 exploration and the low-cost hardware in respectively Sec.~\ref{sec:le}~and~\ref{sec:md}.
@@ -287,7 +301,7 @@ exploration}
   \label{fig:3}
   %\vspace*{-.3cm}
 \end{figure*}
-
+\noindent
 There is a large body of work for robot exploration~\cite{lavalle2006planning,yamauchi1997frontier,placed2022survey,dang2019graph,julia2012comparison}. 
 While the majority exploits the concept of frontiers~\cite{wenchuan2019sampling}, i.e., boundaries between known and unknown space, mixed approaches are emerging~\cite{dai2020fast,schmid2020efficient,placed2022survey}. 
 Especially useful in the presence of diverse sensing modalities, e.g., involving raw sensory data, topologies, semantics, etc., they have multiple %potential 
@@ -413,7 +427,7 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
 
 \subsection{Low-cost hardware design}
 \label{sec:md}
-
+\noindent
 The RB5 experimental robotic platform in this letter adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{kim2012optimal,mann2005dynamic,faisal2021low} as the rocker and bogie pivot to maintain wheel contact~\cite{mann2005dynamic}.
 %
 Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear motor, whereas the rotational degrees of freedom in the rocker-bogie suspensions are passive. Since the wheels are all parallel and cannot rotate out of the plane, the robot uses the same actuation strategy as that of a differential drive vehicle to move straight and make turns by controlling the left and right sets of wheels in the same and opposite directions. Given that RB5 has multiple wheels on each side, its ability to make turns is reduced compared to a differential drive vehicle. Due to its extended body length, RB5 incorporates a caster wheel in the back to support the rear end of the frame.
@@ -483,7 +497,7 @@ Cost-wise, our approach requires an RGB-D camera for exploration. The approach c
 
 \section{Field Experiments}
 \label{sec:fe}
-
+\noindent
 Field experiments in autonomous long-term %large-scale 
 exploration involving RB5 experimental robotic platform are conducted in a variety of environments, including indoors structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements our autonomous %large-scale 
 exploration. %framework
@@ -503,7 +517,7 @@ The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see
 
 \section{Conclusion and Future Directions}
 \label{sec:cf}
-
+\noindent
 The content of this letter consists of an %framework 
 approach %and an experimental robotic platform 
 for low-cost autonomous exploration in both indoor and outdoor challenging environments. While comparable with other literature tackling autonomous exploration~\cite{lluvia2021active,placed2022survey,julia2012comparison}, the approach extends the state-of-the-art further to operate in the presence of fewer sensory and computing requirements. Requiring an RGB-D camera only, all the exploration is computed in real-time on a low-power computing hardware which is cheaper compared to the existing literature operating in similar settings~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}. 
@@ -1093,7 +1107,12 @@ We are also extending the functionality to account for different cost functions 
 %\end{IEEEbiographynophoto}
 
 
-{\small\bibliographystyle{IEEEtran}  %
+{\small
+\section*{Acknowledgments}
+\noindent
+We thank A.~Michael~West, Victoria~Ereskina, and Beau~Birdsall for their contribution to the mechanical design of the experimental robotic platform used in this letter.
+
+\bibliographystyle{IEEEtran}  %
 %\bibliography{../../books/phd-thesis/backmatter/references}}
 \bibliography{rb5-paper}}  
 
