@@ -1,7 +1,7 @@
 
 # A Low-Cost Energy-Efficient Approach for Long-Term Autonomous Exploration 
 
-This is an early version our long-term autonomous exploration [paper](rb5-paper.pdf). The paper is currently in preparation, it is **not** peer-reviewed. Furthermore, <ins>the manuscript is not for distribution</ins>. 
+This is an early version of our long-term autonomous exploration [paper](rb5-paper.pdf). The paper is currently in preparation, it is **not** peer-reviewed. Furthermore, <ins>the manuscript is not for distribution</ins>. 
 
 
 ## Reference
