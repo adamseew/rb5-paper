@@ -44,7 +44,8 @@
 
 \AddToHook{shipout/foreground}{
   \begin{tikzpicture}[remember picture,overlay]
-    \node[red,rotate=45,scale=10,opacity=0.2] at (current page.center) {\small\fontfamily{phv}\selectfont IN~PREPARATION};
+    \node[red,rotate=45,scale=10,opacity=0.2] at (current page.center) {\small\fontfamily{phv}\selectfont %};
+    IN~PREPARATION};
     %UNDER~REVIEW};   
   \end{tikzpicture}
 }
@@ -110,23 +111,28 @@ May~2023
 
 \vspace*{-1cm}
 \begin{abstract} 
-This letter describes an approach for autonomous %large-scale and 
+This paper describes an approach for autonomous %large-scale and 
 long-term exploration for robots with a lower sensory footprint. Requiring just an RGB-D camera and low-power computing hardware, %we present an approach based on the open-source robot operating system middleware and 
 the approach uses an experimental wheeled robot with rocker-bogie suspension. It operates %on large-scale, 
 in unknown and GPS-denied environments, and on indoor and outdoor challenging terrains. 
 The exploration path is derived with a %novel 
-methodology that extends frontier- and sampling-based exploration literature with a path-following vector field and the position exploiting a state-of-the-art SLAM %simultaneous localization and mapping 
-algorithm. 
-The approach allows the robot to explore its surroundings at lower frequencies, utilizing cheaper hardware compared to state-of-the-art approaches, and is generic in terms of portability to other mobile robots with both computational and cost constraints. 
-The approach further consists of a novel methodology to interact with a remotely located human operator based on an inexpensive long-range and low-power communication technology from the internet-of-things domain and a customized communication protocol. 
-Data show improved autonomy per cost over the baseline of existing %autonomous exploration %system-of-systems
-approaches with indoor and outdoor experiments.
+methodology that extends frontier- and sampling-based exploration %literature 
+with a path-following vector field and utilizes %the position exploiting 
+a state-of-the-art SLAM %simultaneous localization and mapping 
+algorithm to derive the position. 
+The approach allows the robot to explore its surroundings at lower update frequencies, utilizing cheaper hardware compared to state-of-the-art approaches, and is generic in terms of portability to other mobile robots with both computational and cost constraints. 
+The approach further consists of a novel methodology to interact with a remotely located human operator based on an inexpensive long-range and low-power communication technology from the internet-of-things domain (i.e., LoRa) 
+and a customized communication protocol. 
+%Data
+Results show improved %autonomy per cost
+long-term performance in indoor and outdoor environments despite low-cost hardware over the baseline of existing %autonomous exploration %system-of-systems
+approaches.
 \end{abstract}
 
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{IEEEkeywords}
-Motion and Path Planning; Energy and Environ- ment-Aware Automation.
+Motion and Path Planning; Energy and Environ- ment-Aware Autonomy.
 \end{IEEEkeywords}
 
 %\section{Introduction}
@@ -190,23 +196,23 @@ Starting from the cost advantages of LoRa communication, we develop a low-cost %
 exploration approach based on the open-source robot operating system (ROS) middleware~\cite{quigley2009ros} and an experimental robotic platform--RB5 in Figure~\ref{fig:0}, a wheeled mobile robot with rocker-bogie suspension--capable of exploring autonomously dynamic indoor and outdoor environments.
 Similar platforms in the literature comprise two degrees of freedom suspension with pivots~\cite{setterfield2013terrain,mann2005dynamic,faisal2021low} and provide rough terrain static adaptability~\cite{kim2012optimal}. They are cheaper than, e.g., legged robots in terms of the cost of sensors %(see Fig.~\ref{fig:0}) 
 and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
-Although specific to RB5 in the letter, the approach is generic in terms of portability to other mobile robots with cost and computational constraints.
+Although specific to RB5 in the paper, the approach is generic in terms of portability to other mobile robots with cost and computational constraints.
 %
 Hardware-wise, the approach maintains a lower sensory footprint with low-cost components, whereas 
 software-wise, it integrates multiple modules into the exploration framework. Being able to operate in both unknown and GPS-denied environments, the approach derives the robot's position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab} %,campos2021orb}, 
 and the trajectory with a novel methodology that extends exploration literature with a path-following vector field~\cite{goncalves2010vector} from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows the robot to explore its surroundings at lower frequencies and in real-time, utilizing cheaper computing hardware compared to state-of-the-art approaches~\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}. 
 
-The main \textbf{contributions} of this letter are
+The main \textbf{contributions} of this paper are
 \begin{enumerate*}[label={(\alph*)},font={\textit}]
 \item an approach for \textit{long-term autonomous exploration} that exploits \textit{energy-efficient design} and \textit{low-power communication} and
 \item an extension of the existing literature to \textit{mobile robots with fewer and cheaper sensors}.
 \end{enumerate*}
 %an \textit{approach for autonomous exploration} which extends existing literature to mobile robots \textit{with fewer and cheaper sensors and} works \textit{for long-term exploiting energy-efficient design and low-power communication}.
-In particular, in %In 
-Section~\ref{sec:fe}, data show %improved ``coverage per cost'' 
-the exploration performance and obstacle avoidance features 
-over the baseline of existing autonomous exploration system-of-systems with indoor and outdoor ``in the field'' experiments. 
-The remainder of the letter is structured as follows.
+%In particular, in %In 
+%Section~\ref{sec:fe}, data show %improved ``coverage per cost'' 
+We demonstrate the exploration performance and obstacle avoidance performance of our approach  
+over the baseline of existing autonomous exploration system-of-systems with a set of indoor and outdoor ``in the field'' experiments (Sec.~\ref{sec:fe}). 
+The remainder of the paper is structured as follows.
 Sec.~\ref{sec:m} describes the approach from the software and hardware standpoints. Sec.~\ref{sec:rw} summarizes and compares existing literature, Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
 and future directions.
 
@@ -263,7 +269,8 @@ exploration approach %framework
 \section{Approach}
 \label{sec:m}
 \noindent
-The approach section details the implementation and design choices in terms of %both 
+%The approach section 
+In this section, we detail the implementation and design choices in terms of %both 
 the software for autonomous long-term %large-scale 
 exploration and the low-cost hardware in respectively Sec.~\ref{sec:le}~and~\ref{sec:md}.
 
@@ -428,7 +435,7 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
 \subsection{Low-cost hardware design}
 \label{sec:md}
 \noindent
-The RB5 experimental robotic platform in this letter adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{kim2012optimal,mann2005dynamic,faisal2021low} as the rocker and bogie pivot to maintain wheel contact~\cite{mann2005dynamic}.
+The RB5 experimental robotic platform in this paper adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{kim2012optimal,mann2005dynamic,faisal2021low} as the rocker and bogie pivot to maintain wheel contact~\cite{mann2005dynamic}.
 %
 Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear motor, whereas the rotational degrees of freedom in the rocker-bogie suspensions are passive. Since the wheels are all parallel and cannot rotate out of the plane, the robot uses the same actuation strategy as that of a differential drive vehicle to move straight and make turns by controlling the left and right sets of wheels in the same and opposite directions. Given that RB5 has multiple wheels on each side, its ability to make turns is reduced compared to a differential drive vehicle. Due to its extended body length, RB5 incorporates a caster wheel in the back to support the rear end of the frame.
 
@@ -498,8 +505,10 @@ Cost-wise, our approach requires an RGB-D camera for exploration. The approach c
 \section{Field Experiments}
 \label{sec:fe}
 \noindent
-Field experiments in autonomous long-term %large-scale 
-exploration involving RB5 experimental robotic platform are conducted in a variety of environments, including indoors structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements our autonomous %large-scale 
+In order to demonstrate the effectiveness of our approach, we conduct a set of 
+field experiments in autonomous long-term %large-scale 
+exploration involving our RB5 experimental robotic platform %are conducted 
+in a variety of environments, including indoors structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements our autonomous %large-scale 
 exploration. %framework
 The computing hardware mounts peripherals for sensing the environment and for communication. The former group consists of a low-cost upward-facing RGB camera for detections (see Sec.~\ref{sec:cf}) and the RGB-D camera (see Sec.~\ref{sec:le}). The latter of a LoRa wireless network bundle with the RN2903 module and an Intel (R) AX200 network card for standard wireless communication via 802.11 protocol when, e.g., RB5 is in reach of an available wireless network.
 %
@@ -518,7 +527,7 @@ The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see
 \section{Conclusion and Future Directions}
 \label{sec:cf}
 \noindent
-The content of this letter consists of an %framework 
+The content of this paper consists of an %framework 
 approach %and an experimental robotic platform 
 for low-cost autonomous exploration in both indoor and outdoor challenging environments. While comparable with other literature tackling autonomous exploration~\cite{lluvia2021active,placed2022survey,julia2012comparison}, the approach extends the state-of-the-art further to operate in the presence of fewer sensory and computing requirements. Requiring an RGB-D camera only, all the exploration is computed in real-time on a low-power computing hardware which is cheaper compared to the existing literature operating in similar settings~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}. 
 
@@ -1110,7 +1119,7 @@ We are also extending the functionality to account for different cost functions 
 {\small
 \section*{Acknowledgments}
 \noindent
-We thank A.~Michael~West, Victoria~Ereskina, and Beau~Birdsall for their contribution to the mechanical design of the experimental robotic platform used in this letter.
+We thank A.~Michael~West, Victoria~Ereskina, and Beau~Birdsall for their contribution to the mechanical design of the experimental robotic platform used in this paper.
 
 \bibliographystyle{IEEEtran}  %
 %\bibliography{../../books/phd-thesis/backmatter/references}}
