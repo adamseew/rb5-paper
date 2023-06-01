@@ -101,7 +101,7 @@ Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staf
 \markboth{%Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2021
 %Manuscript~submitted~for~publication. Version~\textnumero~1, April~2023
 Manuscript in preparation. %\underline{Not for distribution}. 
-May~2023
+June~2023
 }%
 {Seewald \MakeLowercase{\textit{et al.}}: A Low-Cost Approach for Long-Term Exploration}
 
@@ -116,7 +116,7 @@ May~2023
 \begin{abstract} 
 This paper tackles %describes an approach for 
 autonomous %large-scale and 
-long-term exploration for robots with lower sensory footprint. Requiring just an RGB-D camera and low-power computing hardware, %we present an approach based on the open-source robot operating system middleware and 
+long-term exploration for robots with a lower sensory footprint. Requiring just an RGB-D camera and low-power computing hardware, %we present an approach based on the open-source robot operating system middleware and 
 the approach uses an experimental wheeled robot with rocker-bogie suspension. It operates %on large-scale, 
 in unknown and GPS-denied environments, and on indoor and outdoor challenging terrains. 
 The exploration path uses %is derived with 
@@ -126,8 +126,9 @@ with a path-following vector field and utilizes %the position exploiting
 a state-of-the-art SLAM %simultaneous localization and mapping 
 %algorithm 
 to derive the position. 
-The approach allows the robot to explore its surroundings at lower update frequencies, utilizing cheaper hardware compared to %state-of-the-art
-other approaches, and is generic in terms of portability to other mobile robots with both computational and cost constraints. 
+The approach allows the robot to explore its surroundings at lower update frequencies, utilizing cheaper hardware compared to the state-of-the-art, and it is generic in terms of adaptation to other mobile robots with similar sensing. 
+%other approaches, 
+%and it is generic in terms of portability to other mobile robots with both computational and cost constraints. 
 The approach further consists of a methodology to interact with a remotely located human operator based on an inexpensive long-range and low-power communication technology from the internet-of-things domain (i.e., LoRa) 
 and a customized communication protocol. 
 %Data
@@ -174,7 +175,7 @@ Motion and Path Planning; Energy and Environ- ment-Aware Autonomy.
 \end{figure}
 
 \IEEEPARstart{T}{he} promise of long-term autonomous robotic exploration is currently being held up in part by the expense of the required sensing, computing, and mechanical hardware. %~\cite{muller2021openbot}. 
-This cost is related to the computational intensity of most common navigation and communication approaches~\cite{lluvia2021active,placed2022survey}, which significantly increases for challenging outdoor terrains. Addressing this challenge, we introduce novel techniques to reduce update frequencies and enhance communication capabilities of existing approches. By loosening the required update frequencies and communication requirements, our methods enable the use of lower-performing and lower-cost hardware while still retaining good autonomous performance.
+This cost is related to the computational intensity of most common navigation and communication approaches~\cite{lluvia2021active,placed2022survey}, which significantly increases for challenging outdoor terrains. Addressing this challenge, we introduce novel techniques to reduce update frequencies and enhance the communication capabilities of existing approaches. By loosening the required update frequencies and communication requirements, our methods enable the use of lower-performing and lower-cost hardware while still retaining good autonomous performance.
 %\IEEEPARstart{M}{obile} robots can %both 
 %substitute~\cite{rubio2019review} and %outperform
 %assist humans in %, e.g., 
@@ -193,7 +194,7 @@ This cost is related to the computational intensity of most common navigation an
 
 Recent efforts in this direction include low-cost robots for exploration %\cite{muller2021openbot, zhou2021smartphone,faisal2021low} 
 but lack terrain adaptability~\cite{muller2021openbot} and %computational 
-capabilities~\cite{zhou2021smartphone,faisal2021low} often required to navigate outdoors in the real-world. %~\cite{rubio2019review,kulkarni2022autonomous}.
+capabilities~\cite{zhou2021smartphone,faisal2021low} often required to navigate outdoors in the real world. %~\cite{rubio2019review,kulkarni2022autonomous}.
 %
 Furthermore, in areas that are ambiguous or challenging to traverse, albeit autonomous, state-of-the-art approaches rely on humans for supervision and high-level decision-making~\cite{tranzatto2022cerberus,roucek2020darpa,tabib2022autonomous}. 
 As a result, robots often operate close to humans or require expensive network equipment, such as a mesh of communication devices~\cite{kulkarni2022autonomous,ebadi2020lamp}, or existing network infrastructure~\cite{khairuldanial2019mobile,%baek2022ros,
@@ -215,7 +216,7 @@ For visual sensing,
 %exploration~\cite{tranzatto2022cerberus,roucek2020darpa,tardioli2019ground,tabib2022autonomous,ebadi2020lamp}. 
 our approach maintains a low %er 
 sensory footprint with low-cost components %. It operates for longer and with a lower sensory footprint
-compared to state-of-the-art--an RGB depth (RGB-D) camera to sense the environment--and opearates in a variety of terrains. %~(see Figure~\ref{fig}). %both indoors and outdoors.
+compared to state-of-the-art--an RGB depth (RGB-D) camera to sense the environment--and operates in a variety of terrains. %~(see Figure~\ref{fig}). %both indoors and outdoors.
 %
 Most approaches tackling autonomous exploration use expensive %sensing 
 equipment such as LiDARs~\cite{%kohlbrecher2014hector,
@@ -256,7 +257,7 @@ and operation, as they are able to overcome obstacles without costly computation
 Although specific to RB5 in the paper, the approach is generic in terms of portability to other mobile robots with cost and computational constraints.
 %Long-term autonomous exploration in this paper involves multiple components in an exploration framework. 
 Being able to operate in both unknown and GPS-denied environments, the %approach
-approach derives robot's 
+approach derives the robot's 
 position using a state-of-the-art simultaneous localization and mapping (SLAM) algorithm~\cite{labbe2019rtab} %,campos2021orb}, 
 and the exploration trajectory with a novel methodology that extends exploration literature with a path-following vector field %\cite{goncalves2010vector} 
 from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. This allows the robot to explore its surroundings for longer and at lower update frequencies, % and in real-time, 
@@ -274,7 +275,7 @@ We demonstrate the exploration performance and obstacle avoidance performance of
 over the baseline of existing autonomous exploration system-of-systems with a set of indoor and outdoor ``in the field'' experiments (Section~\ref{sec:fe}). 
 The remainder of the paper is structured as follows.
 Sec.~\ref{sec:m} describes the approach from the software and hardware standpoints. %Sec.~\ref{sec:rw} summarizes and compares existing literature, 
-Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration, and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
+Sec.~\ref{sec:pf} formalizes the problem of autonomous exploration and Sec.~\ref{sec:cf} drafts conclusions %a proposes 
 and future directions.
 
 
@@ -292,8 +293,8 @@ and future directions.
 \noindent
 The problem considered in this work %to showcase the approach for long-term %large-scale 
 %exploration 
-is that of exploring an unknown bounded space, i.e., of visiting each point in within.
-The robot is free to move in the space except for an arbitrary number of obstacles.
+is that of exploring an unknown bounded space, i.e., visiting each point in within.
+The robot is free to move except for an arbitrary number of obstacles.
 We define in this section the problem with mathematical rigor to later derive a technique to solve it at lower update frequencies and thus for longer than the state-of-the-art. 
 Formally, the problem 
 is that of exploring a bounded volume $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$. If the notation $[n]$ denotes a set of positive naturals up to $n\in\mathbb{N}_{>0}$ and $[n]_{>0}$ of strictly positive naturals, we are interested in collision-free trajectories that explore $\mathcal{Q}$ and avoid $n$ obstacles $\mathcal{Q}^{O_i}\subset\mathbb{R}^3,i\in[n]_{>0}$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{O_i}$ for each $i$ with a set of vertices within which the two sets are contained.
@@ -595,7 +596,7 @@ The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see
 This paper consists of an %framework 
 approach %and an experimental robotic platform 
 for low-cost long-term autonomous exploration in both indoor and outdoor challenging environments. While comparable with other literature tackling autonomous exploration, %~\cite{lluvia2021active,placed2022survey}, %,julia2012comparison}, 
-the approach extends the state-of-the-art further to operate in the presence of fewer sensory and computing requirements. Requiring an RGB-D camera only, all the exploration is computed in real-time on a low-power computing hardware which is cheaper compared to the existing literature operating in similar settings.%~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}. 
+the approach extends the state-of-the-art further to operate in the presence of fewer sensory and computing requirements. Requiring an RGB-D camera only, all the exploration is computed in real-time on low-power computing hardware which is cheaper compared to the existing literature operating in similar settings.%~\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}. 
 
 The exploration is based on a novel mixed approach--a frontier- and sampling-based method from the literature extended with a path-following vector field %~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis} 
 from the aerial robotics domain--which allows the robot to operate at lower update frequencies. 
