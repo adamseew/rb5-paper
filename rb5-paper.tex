@@ -90,8 +90,8 @@ Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staf
         % <-this % stops a space
   %\thanks{Manuscript received: Month, Day, Year; Revised Month, Day, Year; Accepted Month, Day, Year.}%Use only for final RAL version
   %\thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments.} %Use only for final RAL version
-  \thanks{${}^\text{1}$A.\hspace*{.4ex}S., C.\hspace*{.4ex}M., S.\hspace*{.4ex}N., O.\hspace*{.4ex}F., H.\hspace*{.4ex}C, I.\hspace*{.4ex}A., and A.\hspace*{.4ex}M.\hspace*{.4ex}D. are with the Department of Mechanical Engineering and Materials Science, Yale University, CT, USA. Email: {\tt\footnotesize \href{mailto:adam.seewald@yale.edu}{adam.seewald@yale.edu};}}
-  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}C. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA, but the work was performed while affiliated with Yale.}
+  \thanks{${}^\text{1}$A.\hspace*{.4ex}S., M.\hspace*{.4ex}C., S.\hspace*{.4ex}N., O.\hspace*{.4ex}F., H.\hspace*{.4ex}C, I.\hspace*{.4ex}A., and A.\hspace*{.4ex}M.\hspace*{.4ex}D. are with the Department of Mechanical Engineering and Materials Science, Yale University, CT, USA. Email: {\tt\footnotesize \href{mailto:adam.seewald@yale.edu}{adam.seewald@yale.edu};}}
+  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}M. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA, but the work was performed while affiliated with Yale.}
   %\thanks{${}^\text{3}$A.\hspace*{.4ex}M.\hspace*{.4ex}W. is with the Department of Mechanical Engineering, Massachusetts Institute of Technology, MA, USA;}
   %\thanks{${}^\text{4}$V.\hspace*{.4ex}E. and B.\hspace*{.4ex}B. are currently unaffiliated. ${}^\text{2, 3, 4}$C.\hspace*{.4ex}M.\hspace*{.4ex}C., A.\hspace*{.4ex}M.\hspace*{.4ex}W., V.\hspace*{.4ex}E., and B.\hspace*{.4ex}B. performed the work while affiliated with Yale University.}
   %\thanks{Digital Object Identifier (DOI): see top of this page.}
@@ -269,7 +269,7 @@ faisal2021low} and provide rough terrain static adaptability. %~\cite{kim2012opt
 They are cheaper than, e.g., legged robots in terms of the cost of sensors %(see Fig.~\ref{fig:0}) 
 and operation, as they are able to overcome obstacles without costly computations for gait adaptation and planning~\cite{muller2021openbot}.
 Although %specific to
-we implement out approach on the RB5 rover, %in the paper, 
+we implement our approach on the RB5 rover, %in the paper, 
 the approach is generic in terms of portability to other mobile robots with cost and computational constraints.
 %Long-term autonomous exploration in this paper involves multiple components in an exploration framework. 
 
@@ -314,7 +314,7 @@ Formally, the problem
 is that of exploring a bounded volume $\mathcal{Q}\subseteq\mathbb{R}^3$ with respect to an inertial navigation frame $\mathcal{O}_W$. If the notation $[n]$ denotes a set of positive naturals up to $n\in\mathbb{N}_{>0}$ and $[n]_{>0}$ of strictly positive naturals, we are interested in collision-free trajectories that explore $\mathcal{Q}$ and avoid $n$ obstacles $\mathcal{Q}^{O_i}\subset\mathbb{R}^3,i\in[n]_{>0}$. We can approximate the space that delimits $\mathcal{Q}$ and $\mathcal{Q}^{O_i}$ for each $i$ with a set of vertices within which the two sets are contained.
 
 \begin{pb}[Exploration]
-  Consider sets of vertices $V:=\{\mathbf{v}_1,$ $\mathbf{v}_2,\dots\}$, $O_i:=\{\mathbf{o}_{i,1},\mathbf{o}_{i,2},\dots\}$ with $i\in[n]_{>0},\mathbf{v}_j,\mathbf{o}_{i,k}\in\mathbb{R}^2,$ $\forall j\in[|V|],\,k\in[|O_i|]$ a point w.r.t. $\mathcal{O}_W$. Let $V$ enclose $\mathcal{Q}$, $O_i$ $\mathcal{Q}^{O_i}$ per each $i$. The \textit{exploration problem} is the problem of finding the coverage that visits %each
+  Consider sets of vertices $V:=\{\mathbf{v}_1,$ $\mathbf{v}_2,\dots\}$, $O_i:=\{\mathbf{o}_{i,1},\mathbf{o}_{i,2},\dots\}$ with $\mathbf{v}_j,\mathbf{o}_{i,k}\in\mathbb{R}^2,$ $\forall j\in[|V|],\,k\in[|O_i|]$ points w.r.t. $\mathcal{O}_W$. Let $V$ enclose $\mathcal{Q}$, $O_i$ $\mathcal{Q}^{O_i}$ per each $i\in[n]_{>0}$. The \textit{exploration problem} is the problem of finding the coverage that visits %each
   every point $\mathbf{p}\in\mathcal{Q}\cap\mathcal{Q}^{O_1}\cap\mathcal{Q}^{O_2}\cap\cdots\cap\mathcal{Q}^{O_n}:=\mathcal{Q}^V$.
 \end{pb}
 
@@ -442,12 +442,12 @@ Let thus the path-following equivalent of Eq.~(\ref{eq:vecf}) be
       \STATE \textbf{if} $\mathcal{P}\cap\mathcal{Q}=\{\varnothing\}$ \textbf{then return }$\langle\phi,t\rangle$\vspace*{.3ex}\label{alg:cs}
       \STATE $\mathcal{Q}^V_t:=\{O_{1,t},O_{2,t},\dots,O_{n,t},V_t\}\gets$ sensor readings\label{alg:vd}\vspace*{.3ex}
       \IF{$\mathcal{Q}_t^V\neq\mathcal{Q}_{t-1}^V$}\vspace*{.3ex}
-        \STATE $\{\phi_{1,t},\phi_{2,t},\dots\}\gets$ $\phi$s in Def.~\ref{def:pf}, inters. $\mathcal{Q}^V\cap \Psi(\mathcal{Q}^V_t)$\label{alg:vp}\vspace*{.3ex}
+        \STATE $\{\phi_{1,t},\phi_{2,t},\dots\}\gets$ $\phi$s in Def.~\ref{def:pf}, inters. $\mathcal{Q}^V\cap \Psi(\mathcal{Q}^V_t)$\vspace*{.3ex}
         \STATE \textbf{if} $\phi_t:=\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ \textbf{then }the robot is stuck\label{alg:mpty}\vspace*{.3ex}
         \STATE \textbf{else}
         \STATE $\,\,\,\,\,\,\phi_t\gets \argmax_{\phi}l(\phi_t,t,\mathcal{Q}_t^V)$ in Eq.~(\ref{eq:cost})\label{alg:am}\vspace*{.3ex}
         \STATE $\,\,\,\,\,\,\langle\phi,t\rangle\gets\langle\phi,t\rangle\cup\langle\phi_t,t\rangle$ in Def.~\ref{def:co}\vspace*{.3ex}
-        \STATE $\,\,\,\,\,\,\mathcal{P}\gets\mathcal{P}\cup \Psi(\mathcal{Q}_t^V)$
+        \STATE $\,\,\,\,\,\,\mathcal{P}\gets\mathcal{P}\cup \Psi(\mathcal{Q}_t^V)$\label{alg:vp}
         \STATE \textbf{end if}
         \vspace*{.3ex}
       \ENDIF
@@ -476,24 +476,25 @@ In this way, if there are no obstacles, Eq.~(\ref{eq:spln}--\ref{eq:cost}) are s
 
 Using the algorithm, the %framework 
 approach provides a way to explore space $\mathcal{Q}$ and avoid obstacles $\mathcal{Q}^{O_i}$. There are configurations at which there are no feasible trajectories nonetheless, e.g., if $\{\phi_{1,t},\phi_{2,t},\dots\}=\{\varnothing\}$ in Line~\ref{alg:mpty}. In this scenario, the %framework 
-platform allows a human to intervene via standard wireless and LoRa communication technology. The robot can then be teleoperated on long distances--studies from the internet-of-things domain~\cite{shanmuga2020survey%,raza2017lora
+platform allows a human to intervene via standard wireless or LoRa communication technology. The robot can then be teleoperated on long distances--studies from the internet-of-things domain~\cite{shanmuga2020survey%,raza2017lora
 } report a range of up to five kilometers in an urban setting--and with relatively inexpensive hardware equipment (two LoRa bundles). The %framework 
-approach we propose utilizes a web interface to parse human commands into our custom communication protocol which utilizes the LoRa physical layer's payload to transfer $\varphi$'s $x$ and $y$ components.
+approach we propose utilizes a web interface to parse human commands into our custom communication protocol which utilizes the LoRa physical layer's payload to transfer $\varphi$'s $x$ and $y$ components (see Line~\ref{alg:vf}).
 
 The algorithm is illustrated in Fig.~\ref{fig:3}. At each iteration, the robot samples the environment and derives a set of possible candidate path functions $\{\phi_{1,t},\phi_{2,t},\dots\}$. If there is no obstacle ahead, the optimal function per iteration $\phi_t$ is a line parallel to the robot's direction of travel (see Fig.~\ref{fig:3-3}). If there are obstacles, the %framework 
 approach selects the trajectory via the cost $l$, $\phi_t$, which goes through the middle of the largest frontier (see Fig.~\ref{fig:3-1}~and~\ref{fig:3-2} for %respective 
 obstacles ``wheel'' and ``wall'').
 
-To derive a map of the environment and to keep the track of the robot within it in Line~\ref{alg:vf}, the %framework 
+To derive a map of the environment and to keep the track of the robot within it--in Line~\ref{alg:vf}--the %framework 
 approach uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. The robot's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs}% and to asses exploration-to-cost (see Fig.~\ref{})
 , showing that the algorithm is effective in exploring unknown environments with a lower sensory footprint (see Sec.~\ref{sec:fe}). Furthermore, an earlier iteration of the work exploited a different SLAM algorithm from the visual SLAM community~\cite{campos2021orb}, showing that some of the %framework 
 approach components are interchangeable.
 
 The %framework %we propose 
-platform
+software
 is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2 %\cite{quigley2009ros} 
-package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa technology. The package further implements serial communication with the microcontroller implemented in Arduino and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D camera (an Intel (R) RealSense (TM) Depth Camera %~\cite{keselman2017intel} 
-D435) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
+package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa technology. The package further %implements
+contains serial communication with the microcontroller implemented in Arduino and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D camera (an Intel (R) RealSense (TM) D435 RGB-D camera%~\cite{keselman2017intel}
+) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
 Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 and ROS respectively, whereas ``base station'' is in PHP and JavaScript.
 
 \begin{figure}[t]
@@ -509,7 +510,7 @@ Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 a
     Usually, approaches that use aerial~\cite{schmid2020efficient,kulkarni2022autonomous} and wheeled~\cite{muller2021openbot,roucek2020darpa,surmann2003autonomous} robots report respectively lowest and highest autonomy, whereas those that use legged~\cite{kulkarni2022autonomous,tranzatto2022cerberus} robots are between the two groups. Here~\cite{muller2021openbot} is an outlier as it uses a small wheeled robot. We have conducted multiple trials under varying ~grounds ~and ~velocities.}
     \label{fig}
   \end{minipage}
-  \vspace*{-.68cm}
+  \vspace*{-.63cm}
   \caption*{The minimum and maximum are approximately four hours and twenty minutes and sixteen hours and a half when the robot respectively moves at full speed and is not moving (red outlier). The first quartile is six hours and ten minutes, the third is nine hours. The median is then eight hours and twenty minutes when the average velocity is two-thirds of the maximum.}
   \vspace*{-.3cm}
 \end{figure}
@@ -519,7 +520,7 @@ rover design}
 \label{sec:md}
 \noindent
 The RB5 experimental robotic platform in this paper adopts a rocker-bogie suspension system~\cite{bickler1989articulated} found on NASA's rovers including Sojourner and Curiosity. On either side of the robot, an upside-down V-shaped linkage called the rocker pivots about an axis on the robot frame. The rocker has a wheel at one end and a smaller V-shaped linkage on the other arm. The smaller linkage, called the bogie, can pivot about an axis on the rocker and has two wheels at its tips. The articulated nature of the rocker-bogie suspension allows the mobile robot to adapt to uneven terrains~\cite{%kim2012optimal,mann2005dynamic,
-faisal2021low} as the rocker and bogie pivot to maintain wheel contact.%~\cite{mann2005dynamic}.
+faisal2021low} as the rocker and bogie pivot to maintain wheel contact. %~\cite{mann2005dynamic}.
 %
 Each of the six wheels in the rocker-bogie suspension is actuated by a DC gear motor, whereas the rotational degrees of freedom in the rocker-bogie suspensions are passive. Since the wheels are all parallel and cannot rotate out of the plane, the robot uses the same actuation strategy as that of a differential drive vehicle to move straight and make turns by controlling the left and right sets of wheels in the same and opposite directions. Given that RB5 has multiple wheels on each side, its ability to make turns is reduced compared to a differential drive vehicle. Due to its extended body length, RB5 incorporates a caster wheel in the back to support the rear end of the frame.
 
@@ -590,13 +591,14 @@ The robot frame's dimensions are 914 by 330 millimeters, and the robot's boundin
 In order to demonstrate the effectiveness of our approach, we conduct a set of 
 field experiments in autonomous long-term %large-scale 
 exploration involving our RB5 experimental robotic platform %are conducted 
-in a variety of environments, including indoors structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements our autonomous %large-scale 
+in a variety of environments, including indoors structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller 
+from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements our autonomous %large-scale 
 exploration. %framework
 The computing hardware mounts peripherals for sensing the environment and for communication. The former group consists of a low-cost upward-facing RGB camera for detections (see Sec.~\ref{sec:cf}) and the RGB-D camera (see Sec.~\ref{sec:le}). The latter 
 consists 
 of a LoRa wireless network bundle with the RN2903 module and an Intel~(R) AX200 network card for standard wireless communication via 802.11 protocol when, e.g., RB5 is in reach of an available wireless network.
 %
-All the components %of the %framework 
+All the software components %of the %framework 
 (detailed at the end of Sec.~\ref{sec:le}) run in real-time onboard RB5, and some additional processing, such as the derivation of the 3D reconstructions in the supplementary material, is carried on an external device connected to RB5's computing hardware via ROS network.
 
 %In 
@@ -617,11 +619,11 @@ One negative of the low-cost approach is a reduced density of the point cloud. T
 is to be observed in the figure, where between, e.g., fifteen and twenty meters on the z-axis and zero and five meters on the x-axis there are significantly fewer points in the point cloud than in other parts of the figure. 
 The algorithm here keeps track (see Line~\ref{alg:vf}) of the path function $\phi_t$ (see Line~\ref{alg:am}) in the event of, e.g., the computing hardware being busy while executing other tasks such as communication. While specific to the computing hardware onboard RB5, the occurrence and the unpredictable nature of the execution is common in the literature, especially if involving heterogeneous elements, i.e., CPU, GPU, and microcontrollers~\cite{seewald2019coarse}.
 %
-Fig.~\ref{fig:1-1}--\ref{fig:1-2} shows a detail of the algorithm in the experiment in terms of obstacle detection and avoidance. Here RB5 detects an obstacle, a ``door'' with a surrounding wall, as it cruises through the hall at approximately fifteen and zero on the respective z- and x-axis. Fig.~\ref{fig:1-1} shows the initial detection of the obstacle on top. The vertices $V, O_i$ are the empty red circles and represent the field of view on the left and the edge of the obstacle on the right. On the bottom is the path-following vector field from Eq.~(\ref{eq:pfvf}) in red and the path function $\phi_t$ in cyan. Fig.~\ref{fig:1-2} shows the following time step as RB5 comes closer, and the robot has to perform a sharper maneuver to avoid the obstacle.
+Fig.~\ref{fig:1-1}--\ref{fig:1-2} show a detail of the algorithm in the experiment in terms of obstacle detection and avoidance. Here RB5 detects an obstacle, a ``door'' with a surrounding wall, as it cruises through the hall at approximately fifteen and zero on the respective z- and x-axis. Fig.~\ref{fig:1-1} shows the initial detection of the obstacle on top. The vertices $V, O_i$ are the empty red circles and represent the field of view on the left and the edge of the obstacle on the right. On the bottom is the path-following vector field from Eq.~(\ref{eq:pfvf}) in red and the path function $\phi_t$ in cyan. Fig.~\ref{fig:1-2} shows the following time step as RB5 comes closer, and the robot has to perform a sharper maneuver to avoid the obstacle.
 
-Fig.~\ref{fig:2} shows an unstructured environment of a hall connecting to an underground tunnel on the respective left and right sides of Fig.~\ref{fig:2-1} for approximately one hundred meters. Conversely to the experiment in Fig.~\ref{fig:1}, this experiment showcases an open circuit, in the sense that the exploration is considered concluded when a specific frontier from the initial frontier is encountered. Fig.~\ref{fig:2-2}--\ref{fig:2-3} shows the obstacle detection, similar to Fig.~\ref{fig:1-1}--\ref{fig:1-2}, for a ``wheel'' placed close to the left edge of the first length of the figure wide approximately 0.42 meters. The trajectory the robot avoiding the obstacle is to be observed in Fig.~\ref{fig:2-1} between fifteen and twenty meters on the z-axis.
+Fig.~\ref{fig:2} shows an unstructured environment of a hall connecting to an underground tunnel on the respective left and right sides of Fig.~\ref{fig:2-1} for approximately one hundred meters. Conversely to the experiment in Fig.~\ref{fig:1}, this experiment showcases an open circuit, in the sense that the exploration is considered concluded when a specific frontier from the initial frontier is encountered. Fig.~\ref{fig:2-2}--\ref{fig:2-3} show the obstacle detection, similar to Fig.~\ref{fig:1-1}--\ref{fig:1-2}, for a ``wheel'' placed close to the left edge of the first length of the figure wide approximately 0.42 meters. The trajectory of the robot avoiding the obstacle is to be observed in Fig.~\ref{fig:2-1} between fifteen and twenty meters on the z-axis.
 
-The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see Fig.~\ref{fig:1-1}) and negative for right turns (see Fig.~\ref{fig:2-3}--\ref{fig:2-2}). The turning rate $k_e$ is derived empirically similar to other literature~\cite{seewald2022energy,garcia2017guidance}, and is 0.05, 0.1, and 0.4 depending on the turning maneuver, i.e., it is 0.05 when $\phi_t$ is a line (or close to it), 0.4 when a sharp curve in respectively Fig.~\ref{fig:1-3}~and~\ref{fig:2-2}. The points in the point cloud are adjusted for height and length and filtered for visualization purposes, i.e., we have reported one point every two hundred and fifty, every five hundred, etc., in Fig.~\ref{fig:1-3}~and~\ref{fig:2-1}.
+The turning direction $E$ in Eq.~(\ref{eq:pfvf}) is positive for left turns (see Fig.~\ref{fig:1-1}--\ref{fig:1-2}) and negative for right turns (see Fig.~\ref{fig:2-3}--\ref{fig:2-2}). The turning rate $k_e$ is derived empirically similar to other literature~\cite{seewald2022energy,garcia2017guidance}, and is 0.05, 0.1, and 0.4 depending on the turning maneuver, i.e., it is 0.05 when $\phi_t$ is a line (or close to it), 0.4 when a sharp curve in respectively Fig.~\ref{fig:1-3}~and~\ref{fig:2-2}, and 0.1 otherwise. The points in the point cloud are adjusted for height and length and filtered for visualization purposes, i.e., we have reported one point every two hundred and fifty, every five hundred, etc., in Fig.~\ref{fig:1-3}~and~\ref{fig:2-1}.
 
 \section{Conclusion and Future Directions}
 \label{sec:cf}
@@ -640,7 +642,7 @@ Human intervention, if required, is implemented via a novel methodology based on
 from the internet-of-things domain. The position is from a state-of-the-art SLAM algorithm. %~\cite{labbe2019rtab}.
 Requiring only two low-cost LoRa bundles for communication, the approach enables operations on long distances with a custom communication protocol with no significant impact on costs and resources conversely to existing methodologies based on a mesh of devices. %~\cite{surmann2003autonomous,tardioli2019ground,ebadi2020lamp,roucek2020darpa,tranzatto2022cerberus,kulkarni2022autonomous}.
 
-The results show comparable data to existing literature but improved performance for long-term both indoor and outdoor experiments in a variety of settings. To enable further savings, we are currently extending the approach to account for energy requirements and to guarantee the completeness of the exploration cover via, e.g., exploiting the ergodicity of the exploration path with respect to an information density map.
+The results show comparable data to existing literature but improved performance for long-term with both indoor and outdoor experiments in a variety of settings. To enable further savings, we are currently extending the approach to account for energy requirements and to guarantee the completeness of the exploration cover via, e.g., exploiting the ergodicity of the exploration path with respect to an information density map.
 We are also extending the functionality to account for different cost functions in Eq.~(\ref{eq:cost}) and detections with the upward-facing RGB camera--unused in the current setup--to, e.g., detect objects similar to other literature. %in autonomous exploration.%~\cite{kulkarni2022autonomous,tranzatto2022cerberus,roucek2020darpa,ebadi2020lamp}.
 
 

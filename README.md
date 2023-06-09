@@ -11,7 +11,7 @@ To reference the paper, it is sufficient to use the following BibTeX entry:
 @inproceedings{seewald2023rb5,
   title={A low-cost energy-efficient approach for long-term autonomous exploration},
   author={Seewald, Adam and Chanc{\'a}n, Marvin and McCann, Connor M. and Noh, Seonghoon and Fallahi, Omeed and Castillo, Hector and Abraham, Ian and Dollar, Aaron M.},
-  pages={8},
+  pages={7},
   year={2023},
   url={https://adamseewald.cc/short/rb52023},
   note={In preparation}

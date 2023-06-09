@@ -54,11 +54,11 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/auton2.pdf}}%
-    \put(0.12694984,0.04653579){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Schmid~et~al.~\cite{schmid2020efficient}\end{tabular}}}}}%
-    \put(0.20076019,0.02736709){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Kulkarni~et~al.~\cite{kulkarni2022autonomous}\end{tabular}}}}}%
-    \put(0.30607768,0.05840602){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize M{\"u}ller~et~al.~\cite{muller2021openbot}\end{tabular}}}}}%
-    \put(0.3703804,0.01542969){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Tranzatto~et~al.~\cite{tranzatto2022cerberus}\end{tabular}}}}}%
-    \put(0.48943273,0.06220297){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Rou{\v{c}}ek~et~al.~\cite{roucek2020darpa}\end{tabular}}}}}%
+    \put(0.12694984,0.04253579){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Schmid~et~al.~\cite{schmid2020efficient}\end{tabular}}}}}%
+    \put(0.21076019,0.04036709){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Kulkarni~et~al.~\cite{kulkarni2022autonomous}\end{tabular}}}}}%
+    \put(0.31607768,0.07040602){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize M{\"u}ller~et~al.~\cite{muller2021openbot}\end{tabular}}}}}%
+    \put(0.3803804,0.02842969){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Tranzatto~et~al.~\cite{tranzatto2022cerberus}\end{tabular}}}}}%
+    \put(0.48943273,0.06020297){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Rou{\v{c}}ek~et~al.~\cite{roucek2020darpa}\end{tabular}}}}}%
     \put(0.55303955,0.02053122){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Surmann~et~al.~\cite{surmann2003autonomous}\end{tabular}}}}}%
     \put(0.85224758,0.2494602){\rotatebox{60}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize Ours\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/auton2.pdf}}%
