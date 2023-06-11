@@ -194,7 +194,7 @@ This cost is related to the computational intensity of most common navigation an
 
 Recent efforts in this direction include low-cost robots for exploration %\cite{muller2021openbot, zhou2021smartphone,faisal2021low} 
 but lack terrain adaptability~\cite{muller2021openbot} and %computational 
-capabilities often required to navigate outdoors in the real world~\cite{zhou2021smartphone,faisal2021low}. %~\cite{rubio2019review,kulkarni2022autonomous}.
+the capabilities often required to navigate outdoors in the real world~\cite{zhou2021smartphone,faisal2021low}. %~\cite{rubio2019review,kulkarni2022autonomous}.
 %
 Furthermore, in areas that are %ambiguous or 
 challenging to traverse, %albeit autonomous, 
@@ -484,7 +484,8 @@ The algorithm is illustrated in Fig.~\ref{fig:3}. At each iteration, the robot s
 approach selects the trajectory via the cost $l$, $\phi_t$, which goes through the middle of the largest frontier (see Fig.~\ref{fig:3-1}~and~\ref{fig:3-2} for %respective 
 obstacles ``wheel'' and ``wall'').
 
-To derive a map of the environment and to keep the track of the robot within it--in Line~\ref{alg:vf}--the %framework 
+To derive a map of the environment and to keep %the 
+track of the robot within it--in Line~\ref{alg:vf}--the %framework 
 approach uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. The robot's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs}% and to asses exploration-to-cost (see Fig.~\ref{})
 , showing that the algorithm is effective in exploring unknown environments with a lower sensory footprint (see Sec.~\ref{sec:fe}). Furthermore, an earlier iteration of the work exploited a different SLAM algorithm from the visual SLAM community~\cite{campos2021orb}, showing that some of the %framework 
 approach components are interchangeable.
