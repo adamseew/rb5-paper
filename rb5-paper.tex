@@ -140,7 +140,7 @@ approaches.
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{IEEEkeywords}
-Motion and Path Planning; Energy and Environ- ment-Aware Autonomy.
+  Field Robots; Energy and Environment-Aware Autonomation.
 \end{IEEEkeywords}
 
 %\section{Introduction}
@@ -170,7 +170,7 @@ Motion and Path Planning; Energy and Environ- ment-Aware Autonomy.
     long-term, and %in both indoors and outdoors. 
     on challenging terrains. % Top-right is the comparison with representative state-of-the-art approaches in terms of autonomy and sensors' normalized costs.
   }
- %\vspace*{-.4cm}
+  \vspace*{-.2cm}
   \label{fig:0}
 \end{figure}
 
@@ -458,7 +458,7 @@ Let thus the path-following equivalent of Eq.~(\ref{eq:vecf}) be
 \end{algorithm}
 
 The path-following vector field is summarized in the pseudo-code in Algorithm~\ref{alg}, with the gradient descent in Line~\ref{alg:vf}. The vector $\varphi\in\mathbb{R}^2$ points the robot in the direction of the path function $\phi$ with a scalar step size $\theta\in\mathbb{R}_{>0}$. The algorithm runs at the highest frequency $\mathcal{T}:=\{t_0,t_0+h,\dots\}$ with a time-step $h\in\mathbb{R}_{>0}$. Practically, there might be different $h$s at different times (see Sec.~\ref{sec:fe}). In Line~\ref{alg:cs}, the algorithm evaluates if the bounded volume $\mathcal{Q}$ is covered utilizing $\mathcal{P}\subseteq\mathbb{R}^3$ updated in Line~\ref{alg:vp}, where the function $\Psi:\mathbb{R}^{2n}\times\mathbb{R}^2\rightarrow\mathbb{R}^{3n}\times\mathbb{R}^3$ maps the vertices to the volume. The vertices of the local free space $\mathcal{Q}^V_t$ in Line~\ref{alg:vd} are derived from sensor readings, assuming the presence of an RGB-D camera. The %framework 
-approach read the camera's point cloud, clustering the obstacles $O_{1,t},O_{2,t},\dots$ by checking if the distance between consecutive points in space is within a given threshold $\varepsilon\in\mathbb{R}_{>0}$. The vertices of the free space at time instant $t$, $V_t$ are simply the limits of the sensor's field of view.
+approach reads the camera's point cloud, clustering the obstacles $O_{1,t},O_{2,t},\dots$ by checking if the distance between consecutive points in space is within a given threshold $\varepsilon\in\mathbb{R}_{>0}$. The vertices of the free space at time instant $t$, $V_t$ are simply the limits of the sensor's field of view.
 
 The remaining lines %in the algorithm
 compute the feasible path functions $\{\phi_{1,t},\phi_{2,t},\dots\}$ by intersecting the local free space $\Psi(\mathcal{Q}^V_t)$ with possible candidate trajectories that have their final points laying at the edges of $\mathcal{Q}^V_t$, i.e., splines of the form
@@ -488,18 +488,19 @@ To derive a map of the environment and to keep %the
 track of the robot within it--in Line~\ref{alg:vf}--the %framework 
 approach uses a state-of-the-art visual SLAM algorithm from the literature~\cite{labbe2019rtab}. The robot's location is also used to determine whether the exploration is complete in Line~\ref{alg:cs}% and to asses exploration-to-cost (see Fig.~\ref{})
 , showing that the algorithm is effective in exploring unknown environments with a lower sensory footprint (see Sec.~\ref{sec:fe}). Furthermore, an earlier iteration of the work exploited a different SLAM algorithm from the visual SLAM community~\cite{campos2021orb}, showing that some of the %framework 
-approach components are interchangeable.
+%approach 
+components are interchangeable.
 
 The %framework %we propose 
 software
-is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/ytcg_ground-based}{github.com/adamseew/ytcg\_ground-based}}}. It is composed of three distinct components. A ``ground robot'' ROS2 %\cite{quigley2009ros} 
+is distributed under the popular open-source CC BY-NC-SA license\footnote{{\tt\footnotesize \href{https://github.com/adamseew/rb5}{github.com/adamseew/rb5}}}. It is composed of three distinct components. A ``ground robot'' ROS2 %\cite{quigley2009ros} 
 package implements the communication with a base station using either the IEEE 802.11 wireless communication or long-range LoRa technology. The package further %implements
 contains serial communication with the microcontroller implemented in Arduino and the vertices detection (see Algorithm~\ref{alg}). A ``ground navigation'' ROS package collects point clouds from an RGB-D camera (an Intel (R) RealSense (TM) D435 RGB-D camera%~\cite{keselman2017intel}
 ) and other data from the SLAM algorithm~\cite{labbe2019rtab} and ports them into ROS2. Finally, a ``base server'' implements the necessary functionality for remote human intervention.
 Both ``ground robot'' and ``ground navigation'' are implemented in C++ in ROS2 and ROS respectively, whereas ``base station'' is in PHP and JavaScript.
 
 \begin{figure}[t]
-  \vspace*{-.5cm}
+  \vspace*{-.45cm}
   \begin{minipage}[t]{0.57\columnwidth}
     \hspace*{-.5cm}
     \input{figures/auton.pdf_tex}
