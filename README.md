@@ -1,5 +1,5 @@
 
-# A Low-Cost Energy-Efficient Approach for Long-Term Autonomous Exploration 
+# RB5 Low-Cost Explorer: Implementing Autonomous Long-Term Exploration on Low-Cost Robotic Hardware 
 
 This is an early version of our long-term autonomous exploration [paper](rb5-paper.pdf). The paper is currently under review, it is **not** peer-reviewed. Furthermore, <ins>the manuscript is not for distribution</ins>. 
 
@@ -12,7 +12,7 @@ This is an early version of our long-term autonomous exploration [paper](rb5-pap
 To reference the paper, it is sufficient to use the following BibTeX entry:
 ```bibtex
 @inproceedings{seewald2023rb5,
-  title={A low-cost energy-efficient approach for long-term autonomous exploration},
+  title={RB5 Low-Cost Explorer: Implementing Autonomous Long-Term Exploration on Low-Cost Robotic Hardware},
   author={Seewald, Adam and Chanc{\'a}n, Marvin and McCann, Connor M. and Noh, Seonghoon and Fallahi, Omeed and Castillo, Hector and Abraham, Ian and Dollar, Aaron M.},
   pages={7},
   year={2023},
