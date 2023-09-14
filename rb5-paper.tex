@@ -113,10 +113,10 @@ Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staf
 
 %\vspace*{-1cm}
 \begin{abstract} 
-This systems paper proposes the design and implementation of a wheeled robot for %describes an approach for 
+This systems paper presents the design and implementation of a wheeled robot for %describes an approach for 
 autonomous %large-scale and 
 long-term exploration with a lower sensory footprint. Requiring just an RGB-D camera and low-power computing hardware, %we present an approach based on the open-source robot operating system middleware and 
-the approach uses an experimental platform with rocker-bogie suspension. It operates %on large-scale, 
+the system is an experimental platform with rocker-bogie suspension. It operates %on large-scale, 
 in unknown and GPS-denied environments, and on indoor and outdoor %challenging 
 terrains. 
 The exploration path uses a %is derived with 
@@ -126,7 +126,9 @@ with a path-following vector field and utilizes %the position exploiting
 a state-of-the-art SLAM %simultaneous localization and mapping 
 %algorithm 
 to derive the position. 
-The approach allows the robot to explore its surroundings at lower update frequencies, utilizing cheaper hardware compared to the state-of-the-art, and it is generic in terms of adaptation to other mobile robots with similar sensing. 
+The system is generic in terms of portability. It allows the robot to explore its surroundings at lower update frequencies, %utilizing cheaper hardware compared to the state-of-the-art, and 
+enabling the use of lower-performing and lower-cost hardware while still retaining good autonomous performance.
+%It is generic in terms of adaptation to other mobile robots with similar sensing. 
 %other approaches, 
 %and it is generic in terms of portability to other mobile robots with both computational and cost constraints. 
 The approach further consists of a methodology to interact with a remotely located human operator based on an inexpensive long-range and low-power communication technology from the internet-of-things domain (i.e., LoRa) 
@@ -276,7 +278,7 @@ the approach is generic in terms of portability to other mobile robots with cost
 %Long-term autonomous exploration in this paper involves multiple components in an exploration framework. 
 
 The main \textbf{contributions} of this systems paper are 
-\begin{enumerate*}[label={(\alph*)},font={\textit}]
+\begin{enumerate*}[label={(\roman*)},font={\textit}]
   \item the \textit{design and implementation of a low-cost robot for autonomous exploration}, and 
   \item the \textit{feasibility and limitations analysis} of the low-cost exploration. 
 \end{enumerate*}
@@ -579,7 +581,7 @@ The robot frame's dimensions are 914 by 330 millimeters, and the robot's boundin
   \vspace*{-.5cm}
 \end{figure*}
 
-\section{Field Experiments}
+\section{Experiments}
 \label{sec:fe}
 \noindent
 In order to demonstrate the effectiveness of our approach, we conduct a set of 
