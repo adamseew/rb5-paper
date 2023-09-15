@@ -54,9 +54,9 @@
 
 \AddToHook{shipout/foreground}{
   \begin{tikzpicture}[remember picture,overlay]
-    \node[red,rotate=45,scale=10,opacity=0.2] at (current page.center) {\small\fontfamily{phv}\selectfont};
+    \node[red,rotate=45,scale=10,opacity=0.2] at (current page.center) {\small\fontfamily{phv}\selectfont%};
     %IN~PREPARATION};
-    %UNDER~REVIEW};   
+    UNDER~REVIEW};   
   \end{tikzpicture}
 }
 
@@ -585,8 +585,8 @@ The robot frame's dimensions are 914 by 330 millimeters, and the robot's boundin
 \label{sec:fe}
 \noindent
 In order to demonstrate the effectiveness of our approach, we conduct a set of 
-field experiments %in autonomous long-term %large-scale 
-exploration involving our RB5 experimental robotic platform %are conducted 
+field experiments %in autonomous long-term %large-scale exploration 
+involving our RB5 experimental robotic platform %are conducted 
 in a variety of environments, including indoor structured, unstructured underground, and outdoors. In each, the microcontroller executes a finite set of motion primitives via velocity control. These primitives are transmitted serially to the microcontroller 
 from RB5's onboard computing hardware, an NVIDIA (R) Jetson NX (TM) embedded board, which implements our autonomous %large-scale 
 exploration. %framework
