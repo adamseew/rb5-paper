@@ -24,4 +24,5 @@
 .*.*.swp
 .*.*.swo
 *.synctex.gz
+*_working.pdf
 figures/abstract_source/*
