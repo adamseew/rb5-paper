@@ -107,7 +107,7 @@ Ian Abraham${}^\text{1}$, and Aaron M. Dollar${}^\text{1}$%~\IEEEmembership{Staf
   %\thanks{This paper was recommended for publication by Editor Editor A. Name upon evaluation of the Associate Editor and Reviewers' comments.} %Use only for final RAL version
   \thanks{This work was partly supported by Yale University and a gift from the Boston Dynamics AI Institute.}
   \thanks{${}^\text{1}$A.\hspace*{.4ex}S., M.\hspace*{.4ex}C., S.\hspace*{.4ex}N., O.\hspace*{.4ex}F., H.\hspace*{.4ex}C, I.\hspace*{.4ex}A., and A.\hspace*{.4ex}M.\hspace*{.4ex}D. are with the Department of Mechanical Engineering and Materials Science, Yale University, CT, USA. Email: {\tt\footnotesize \href{mailto:adam.seewald@yale.edu}{adam.seewald@yale.edu};}}
-  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}M. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA, but the work was performed while affiliated with Yale.}
+  \thanks{${}^\text{2}$C.\hspace*{.4ex}M.\hspace*{.4ex}M. is with the School of Engineering and Applied Sciences, Harvard University, MA, USA, but the work was performed while affiliated with Yale University.}
   %\thanks{${}^\text{3}$A.\hspace*{.4ex}M.\hspace*{.4ex}W. is with the Department of Mechanical Engineering, Massachusetts Institute of Technology, MA, USA;}
   %\thanks{${}^\text{4}$V.\hspace*{.4ex}E. and B.\hspace*{.4ex}B. are currently unaffiliated. ${}^\text{2, 3, 4}$C.\hspace*{.4ex}M.\hspace*{.4ex}C., A.\hspace*{.4ex}M.\hspace*{.4ex}W., V.\hspace*{.4ex}E., and B.\hspace*{.4ex}B. performed the work while affiliated with Yale University.}
   %\thanks{Digital Object Identifier (DOI): see top of this page.}
@@ -289,9 +289,6 @@ from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewa
 exploits the scarcity of resources while still running %in real-time 
 with good autonomy and obstacle avoidance features. %to its more expensive counterparts. %~\cite{schmid2020efficient,kulkarni2022autonomous,muller2021openbot,tranzatto2022cerberus,roucek2020darpa,surmann2003autonomous}. %\cite{roucek2020darpa,tranzatto2022cerberus,kim2022autonomous,dang2019graph}.% (see Sec.~\ref{sec:cf}). 
 %
-This allows the robot to explore its surroundings for longer and at lower update frequencies, % and in real-time, 
-utilizing cheaper computing~hardware. %compared to the state-of-the-art 
-%see Figure~\ref{fig}).%\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}.
 Furthermore, our %approach
 approach derives the 
 robot's 
@@ -304,13 +301,16 @@ can operate in both unknown and GPS-denied environments.
 %methodology that extends exploration %literature 
 %with a path-following vector field %\cite{goncalves2010vector} 
 %from the aerial robotics domain~\cite{seewald2022energy,garcia2017guidance,seewaldphdthesis}. 
+This allows the robot to explore its surroundings for longer and at lower update frequencies, % and in real-time, 
+utilizing cheaper computing~hardware. %compared to the state-of-the-art 
+%see Figure~\ref{fig}).%\cite{placed2022survey,tabib2022autonomous,ebadi2020lamp,dang2019graph}.
 
 %Starting from the cost advantages of LoRa communication, 
 Utilizing these components %along 
 with the open-source robot operating system (ROS) middleware, we additionally build  
 %demonstrate 
 a low-cost %approach consisting of an 
-exploration %approach %based on the open-source robot operating system (ROS) middleware %\cite{quigley2009ros} 
+%exploration %approach %based on the open-source robot operating system (ROS) middleware %\cite{quigley2009ros} 
 %and 
 %and build an experimental 
 robotic platform -- RB5 in Figure~\ref{fig:0}, a wheeled mobile robot with rocker-bogie suspension -- capable of exploring autonomously indoor and outdoor environments. 
@@ -673,7 +673,7 @@ via the ROS network.
 
 %In 
 Fig.~\ref{fig} compares our hardware approach to others. 
-``Autonomy'', which is related to instantaneous energy consumption, is reported in hours between the time the battery is fully charged to discharged -- the time when the robot can actively explore its surroundings -- and is compared to representative approaches in the literature tackling autonomous exploration. For our RB5, the minimum and maximum are approximately four hours and twenty minutes and sixteen hours and a half when the robot respectively moves at full speed and is not moving (red outlier). The first quartile is six hours and ten minutes, the third is nine hours. The median is eight hours and twenty minutes when the average velocity is two-thirds of the maximum. Even though the metric is often use cases and battery dependent (i.e., in \cite{roucek2020darpa,tranzatto2022cerberus} the objective is to explore the surroundings in the shortest time), the data show that the reported autonomy for wheeled robots~\cite{muller2021openbot,roucek2020darpa,surmann2003autonomous} is generally higher than the reported autonomy for legged~\cite{tranzatto2022cerberus}, combination of legged and aerial~\cite{kulkarni2022autonomous}, and aerial robots~\cite{schmid2020efficient}.
+``Autonomy'', which is related to instantaneous energy consumption, is reported in hours between the time the battery is fully charged to discharged -- the time when the robot can actively explore its surroundings -- and is compared to representative approaches in the literature tackling autonomous exploration. For our RB5, the minimum and maximum are approximately four hours and twenty minutes and sixteen hours and a half when the robot respectively moves at full speed and is not moving (red outlier). The first quartile is six hours and ten minutes, the third is nine hours. The median is eight hours and twenty minutes when the average velocity is two-thirds of the maximum. Even though the metric is often use cases and battery dependent (i.e., in \cite{roucek2020darpa,tranzatto2022cerberus} the objective is to explore the surroundings in the shortest time), the data show that the reported autonomy for wheeled robots~\cite{roucek2020darpa,surmann2003autonomous} is generally higher than the reported autonomy for legged~\cite{tranzatto2022cerberus}, combination of legged and aerial~\cite{kulkarni2022autonomous}, and aerial robots~\cite{schmid2020efficient}.
 Here \cite{muller2021openbot} is an outlier as it uses a small wheeled robot.
 
 %Cost-wise, our approach requires an RGB-D camera for exploration. The approach closest 
@@ -742,7 +742,7 @@ from the aerial robotics domain
 -- which allows the robot to operate at lower update frequencies. The position is from a state-of-the-art SLAM algorithm. %~\cite{labbe2019rtab}.
 Human intervention, if required, is implemented via a novel methodology based on the LoRa low-power long-range communication technology %~\cite{shanmuga2020survey} 
 from the internet-of-things domain. 
-Requiring only two low-cost LoRa bundles for communication, the approach enables operations on long distances with a custom communication protocol with no significant impact on price and resources conversely to existing methodologies based on a mesh of devices. %~\cite{surmann2003autonomous,tardioli2019ground,ebadi2020lamp,roucek2020darpa,tranzatto2022cerberus,kulkarni2022autonomous}.
+Requiring only two low-cost LoRa bundles for communication, the approach enables operations on long distances with a custom communication protocol with no significant impact on price and resources as opposed to existing methodologies based on a mesh of devices. %~\cite{surmann2003autonomous,tardioli2019ground,ebadi2020lamp,roucek2020darpa,tranzatto2022cerberus,kulkarni2022autonomous}.
 
 %The results show comparable data to existing literature but improved performance for long-term with both indoor and outdoor experiments in a variety of settings. 
 To enable further savings, we are currently extending the approach to account for energy requirements and to %guarantee the completeness of the exploration cover via, e.g., exploiting the ergodicity of the exploration path with respect to an information density map.
