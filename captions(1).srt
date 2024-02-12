@@ -1,0 +1,125 @@
+1
+00:00:08,007 --> 00:00:14,280
+In this work, we tackle the problem of autonomous 
+long-term exploration for robots with fewer and  
+
+2
+00:00:14,280 --> 00:00:20,880
+cheaper sensors compared to the state-of-the-art.
+For visual sensing, our approach requires just an  
+
+3
+00:00:20,880 --> 00:00:25,440
+RGB-D camera rather than expensive 
+LiDARs or a multitude of sensors. 
+
+4
+00:00:25,440 --> 00:00:31,020
+All the exploration is computed in real-time 
+and on low-power computing hardware that  
+
+5
+00:00:31,020 --> 00:00:34,620
+is cheaper compared to the existing 
+literature operating in similar settings. 
+
+6
+00:00:35,760 --> 00:00:40,560
+The hardware consists of RB5—an 
+experimental wheeled-mobile robot  
+
+7
+00:00:40,560 --> 00:00:44,820
+utilized to explore the environment for 
+long-term and on challenging terrains. 
+
+8
+00:00:44,820 --> 00:00:50,700
+The robot has rocker-bogie suspensions, which allow 
+static rough-terrain adaptability without costly  
+
+9
+00:00:50,700 --> 00:00:56,340
+computations for gait adaptation and planning.
+It is built of metallic extrusions and acrylic  
+
+10
+00:00:56,340 --> 00:01:01,680
+sheets, and the rocker and bogie linkages are 
+assembled from aluminum sheets and standoffs. 
+
+11
+00:01:02,520 --> 00:01:07,680
+The exploration is based on a novel mixed 
+approach–a frontier- and sampling-based  
+
+12
+00:01:07,680 --> 00:01:12,300
+method from the literature, which we extend 
+with a path-following vector field from the  
+
+13
+00:01:12,300 --> 00:01:16,380
+aerial robotics domain, allowing the robot 
+to operate at lower update frequencies. 
+
+14
+00:01:16,380 --> 00:01:22,140
+The detail of the algorithm and the exploration 
+path are shown in the third frame from the top  
+
+15
+00:01:22,140 --> 00:01:27,660
+left, where the dome indicates the field of 
+view and the color the proximity to obstacles. 
+
+16
+00:01:28,560 --> 00:01:32,820
+The robot uses the same actuation 
+strategy as that of a differential  
+
+17
+00:01:32,820 --> 00:01:38,160
+drive vehicle to move straight and make turns 
+by controlling the left and right sets of  
+
+18
+00:01:38,160 --> 00:01:43,620
+wheels in the same and opposite directions.
+We conduct a set of field experiments in  
+
+19
+00:01:43,620 --> 00:01:49,380
+autonomous long-term exploration in a variety 
+of environments, including indoors structured,  
+
+20
+00:01:49,380 --> 00:01:54,720
+unstructured underground, and outdoors.
+The approach further consists of a novel  
+
+21
+00:01:54,720 --> 00:01:58,860
+methodology for human intervention, 
+when the robot is unable to move  
+
+22
+00:01:58,860 --> 00:02:04,140
+with the local sensory information.
+The methodology exploits LoRa–an inexpensive  
+
+23
+00:02:04,140 --> 00:02:08,220
+long-range and low-power communication 
+technology from the internet-of-things  
+
+24
+00:02:08,220 --> 00:02:13,920
+domain–and a custom communication protocol.
+Here, a human operator guides the robot  
+
+25
+00:02:13,920 --> 00:02:17,340
+via a smartphone that is connected 
+to a remotely located base station.
+

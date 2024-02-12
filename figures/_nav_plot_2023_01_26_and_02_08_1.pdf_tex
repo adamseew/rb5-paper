@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf' (pdf, eps, ps)
+%% Accompanies image file 'figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,41 +53,41 @@
   \begin{picture}(1,1.40031774)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.34050072,0.74838346){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 1\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.21147234,0.75670131){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.59867923,0.78393465){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.11444135,0.8033661){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0.5\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.52390369,0.71174413){\rotatebox{7}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize x (m)\end{tabular}}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.02280511,0.80856462){\rotatebox{-40}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize y (m)\end{tabular}}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.86417195,0.82049295){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize -1\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=8]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.08857621,1.18577755){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 1\end{tabular}}}}%
     \put(0.01024514,1.00791051){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} z (m)\end{tabular}}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=9]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.09811431,0.85176847){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 1\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=10]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.04375214,1.05415348){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0.5\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=11]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.0816438,0.92025483){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=12]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.81999042,0.11908642){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize -1\end{tabular}}}}%
     \put(0.64193782,0.11908642){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize -0.5\end{tabular}}}}%
     \put(0.51217067,0.11908642){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0\end{tabular}}}}%
     \put(0.33411807,0.11908642){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 0.5\end{tabular}}}}%
     \put(0.19745301,0.11908642){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize 1\end{tabular}}}}%
     \put(0.46388556,0.06160363){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize x (m)\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=13]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
     \put(0.10783762,0.15782963){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0\end{tabular}}}}%
     \put(0.0664501,0.31518847){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 0.5\end{tabular}}}}%
     \put(0.10783762,0.4725473){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} 1\end{tabular}}}}%
     \put(0.04345694,0.30182406){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize\color{red} z (m)\end{tabular}}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=14]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figures/_nav_plot_2023_01_26_and_02_08_1-compressed3.pdf}}%
   \end{picture}%
 \endgroup%

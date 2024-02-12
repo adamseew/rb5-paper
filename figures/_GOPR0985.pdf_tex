@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file '_GOPR0985.pdf' (pdf, eps, ps)
+%% Accompanies image file '_GOPR0985-compressed.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,7 +53,7 @@
   \begin{picture}(1,0.75017746)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/_GOPR0985.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/_GOPR0985-compressed.pdf}}%
     \put(0.32395125,0.04739132){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize $\mathbf{o}_{1,1}$\end{tabular}}}}%
     \put(0.0529328,0.37143693){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize $\mathbf{v}_1$\end{tabular}}}}%
     \put(0.26033995,0.30242335){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize $\mathbf{p}(t_1)$\end{tabular}}}}%
