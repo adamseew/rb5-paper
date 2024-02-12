@@ -26,3 +26,9 @@
 *.synctex.gz
 *_working.pdf
 figures/abstract_source/*
+figures/figures_source/*
+figures/old/*
+video/*
+rb5-paper-compressed.pdf
+rb5-paper_multimedia.zip
+captions\(1\).srt
